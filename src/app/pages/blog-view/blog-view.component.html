@@ -1,0 +1,117 @@
+<app-blog-layout>
+    <div class="blog-view" *ngIf="post">
+      <!-- Back button -->
+      <div class="mb-4">
+        <a [routerLink]="['/blogs']" class="btn btn-sm btn-outline-secondary d-inline-flex align-items-center">
+          <i class="bi bi-arrow-left me-2"></i> Back to all posts
+        </a>
+      </div>
+      
+      <!-- Blog header -->
+      <div class="blog-header mb-4">
+        <h1 class="blog-title">{{ post.title }}</h1>
+        
+        <div class="blog-meta d-flex flex-wrap align-items-center gap-4 my-4">
+          <div class="author d-flex align-items-center">
+            <img 
+              *ngIf="post.author.avatar" 
+              [src]="post.author.avatar" 
+              class="author-avatar rounded-circle me-2" 
+              [alt]="post.author.name">
+            <span>{{ post.author.name }}</span>
+          </div>
+          
+          <div class="publish-date">
+            <i class="bi bi-calendar-event me-1"></i>
+            <span>{{ post.publishDate | date:'longDate' }}</span>
+          </div>
+          
+          <div class="read-time">
+            <i class="bi bi-clock me-1"></i>
+            <span>{{ post.readTime }} min read</span>
+          </div>
+        </div>
+        
+        <!-- Categories and tags -->
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <span *ngFor="let category of post.categories" class="badge bg-primary">
+            {{ category }}
+          </span>
+          <span *ngFor="let tag of post.tags" class="badge bg-secondary">
+            {{ tag }}
+          </span>
+        </div>
+        
+        <!-- Featured image -->
+        <div class="featured-image mb-5">
+          <img [src]="post.imageSrc" [alt]="post.title" class="img-fluid rounded">
+        </div>
+      </div>
+      
+      <!-- Blog content -->
+      <div class="blog-content mb-5">
+        <div [innerHTML]="post.content"></div>
+      </div>
+      
+      <!-- Share buttons -->
+      <div class="share-buttons mb-5">
+        <h4 class="mb-3">Share this article</h4>
+        <div class="d-flex gap-2">
+          <button class="btn btn-sm btn-outline-primary">
+            <i class="bi bi-facebook me-1"></i> Facebook
+          </button>
+          <button class="btn btn-sm btn-outline-info">
+            <i class="bi bi-twitter me-1"></i> Twitter
+          </button>
+          <button class="btn btn-sm btn-outline-dark">
+            <i class="bi bi-linkedin me-1"></i> LinkedIn
+          </button>
+          <button class="btn btn-sm btn-outline-success" (click)="copyLink()">
+            <i class="bi bi-link-45deg me-1"></i> Copy Link
+          </button>
+        </div>
+        <div *ngIf="linkCopied" class="alert alert-success mt-2 fade-out">
+          Link copied to clipboard!
+        </div>
+      </div>
+      
+      <!-- Related posts -->
+      <div class="related-posts mt-5 pt-4 border-top" *ngIf="relatedPosts.length > 0">
+        <h3 class="mb-4">You might also like</h3>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col" *ngFor="let relatedPost of relatedPosts">
+            <div class="card h-100">
+              <img 
+                [src]="relatedPost.imageSrc" 
+                class="card-img-top" 
+                [alt]="relatedPost.title"
+                style="height: 150px; object-fit: cover;">
+              <div class="card-body">
+                <h5 class="card-title">{{ relatedPost.title }}</h5>
+                <p class="card-text small">{{ relatedPost.summary | slice:0:100 }}...</p>
+                <a [routerLink]="['/blog', relatedPost.slug]" class="btn btn-sm btn-primary">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Loading state -->
+    <div *ngIf="!post && !notFound" class="text-center py-5">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <p class="mt-3">Loading article...</p>
+    </div>
+    
+    <!-- Not found state -->
+    <div *ngIf="notFound" class="text-center py-5">
+      <div class="not-found">
+        <i class="bi bi-journal-x" style="font-size: 4rem;"></i>
+        <h2 class="mt-3">Article Not Found</h2>
+        <p class="text-muted">The blog post you're looking for doesn't exist or has been removed.</p>
+        <a [routerLink]="['/blog']" class="btn btn-primary mt-3">Back to Blog</a>
+      </div>
+    </div>
+  </app-blog-layout>

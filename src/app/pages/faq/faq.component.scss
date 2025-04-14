@@ -1,0 +1,106 @@
+// faq.component.scss
+.faq-section {
+    padding: 5rem 1rem;
+    background-color: #f9f9fb;
+    font-family: 'Segoe UI', sans-serif;
+    
+    @media (max-width: 768px) {
+      padding: 3rem 1rem;
+    }
+    
+    .page-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #2c3e50;
+      
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+    
+    .page-subtitle {
+      color: #666;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+    
+    .faq-list {
+      .faq-item {
+        background: #fff;
+        border-radius: 12px;
+        margin-bottom: 1rem;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        overflow: hidden;
+        border-left: 0 solid var(--bs-primary);
+        
+        &:hover {
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .faq-question {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1.5rem;
+          font-weight: 600;
+          font-size: 1.2rem;
+          color: #2c3e50;
+          cursor: pointer;
+          
+          @media (max-width: 768px) {
+            font-size: 1.1rem;
+            padding: 1.2rem;
+          }
+          
+          .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+            color: var(--bs-primary);
+            
+            i {
+              font-size: 1.25rem;
+            }
+            
+            &.rotate {
+              transform: rotate(180deg);
+            }
+          }
+        }
+        
+        .faq-answer {
+          overflow: hidden;
+          background-color: rgba(0, 0, 0, 0.01);
+          border-top: 1px solid rgba(0, 0, 0, 0.05);
+          
+          .answer-content {
+            padding: 0 1.5rem 1.5rem;
+            color: #555;
+            line-height: 1.6;
+            font-size: 1rem;
+            
+            @media (max-width: 768px) {
+              padding: 0 1.2rem 1.2rem;
+            }
+          }
+        }
+        
+        &.open {
+          border-left: 4px solid var(--bs-primary);
+        }
+      }
+    }
+    
+    .more-questions {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #555;
+    }
+  }

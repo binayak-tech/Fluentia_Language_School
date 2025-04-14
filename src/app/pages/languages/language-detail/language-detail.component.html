@@ -1,0 +1,78 @@
+<div class="language-page-container">
+    <div *ngIf="loading" class="loading-container">
+        <div class="spinner"></div>
+        <p>Loading language information...</p>
+    </div>
+
+    <div *ngIf="error" class="error-container">
+        <h2>Sorry, we couldn't load the language information</h2>
+        <p>Please try again later or contact our support team.</p>
+        <button class="btn-primary" routerLink="/">Return to Home</button>
+    </div>
+
+    <section class="language-overview">
+        <div class="container">
+            <div class="info-card">
+                <div class="text-content">
+                    <h2>Why Learn {{language.name}}?</h2>
+                    <p>{{language.description}}</p>
+
+                    <div class="key-info">
+                        <div class="info-item">
+                            <span class="label">Difficulty Level:</span>
+                            <span class="value">{{language.difficulty}}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Avg. Time to Fluency:</span>
+                            <span class="value">{{language.timeToFluency}}</span>
+                        </div>
+                    </div>
+
+                    <h3>Program Highlights</h3>
+                    <ul class="highlights-list">
+                        <li *ngFor="let highlight of language.highlights">{{highlight}}</li>
+                    </ul>
+                </div>
+
+                <div class="image-container">
+                    <img [src]="language.image" [alt]="language.name + ' language class'" class="language-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="course-levels">
+        <div class="container">
+            <h2>Our {{language.name}} Courses</h2>
+            <div class="levels-grid">
+                <div class="level-card">
+                    <h3>Beginner</h3>
+                    <p>Perfect for those with no prior experience. Start your {{language.name}} journey here.</p>
+                </div>
+                <div class="level-card">
+                    <h3>Intermediate</h3>
+                    <p>Build upon your basics and develop more complex conversational skills.</p>
+                </div>
+                <div class="level-card">
+                    <h3>Advanced</h3>
+                    <p>Refine your fluency and master the nuances of the {{language.name}} language.</p>
+                </div>
+                <div class="level-card">
+                    <h3>Business</h3>
+                    <p>Specialized {{language.name}} for professional environments and business contexts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Start Your {{language.name}} Journey Today</h2>
+            <p>Join our next cohort and begin your path to fluency with expert guidance.</p>
+            <div class="cta-buttons">
+                <button class="btn-primary">Schedule a Free Trial Lesson</button>
+                <button class="btn-secondary">Download Course Brochure</button>
+            </div>
+        </div>
+    </section>
+</div>

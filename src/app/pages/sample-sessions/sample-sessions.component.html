@@ -1,0 +1,133 @@
+<!-- sample-videos.component.html -->
+<section class="sample-videos-section">
+    <div class="container py-5">
+      <header class="text-center mb-5">
+        <h1 class="display-4">Fluentia Language School</h1>
+        <p class="lead">Sample Session Videos</p>
+        <p class="text-muted">Experience our teaching methodology with these sample videos from our expert instructors</p>
+      </header>
+  
+      <div class="row">
+        <!-- Filters Section -->
+        <div class="col-lg-3 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-header bg-primary text-white">
+              <h5 class="mb-0">Filters</h5>
+            </div>
+            <div class="card-body">
+              <div class="mb-3">
+                <label for="languageFilter" class="form-label">Language</label>
+                <select 
+                  id="languageFilter" 
+                  class="form-select"
+                  [(ngModel)]="languageFilter"
+                  (change)="applyFilters()">
+                  <option *ngFor="let lang of languages" [value]="lang">{{lang}}</option>
+                </select>
+              </div>
+              
+              <div class="mb-3">
+                <label for="levelFilter" class="form-label">Level</label>
+                <select 
+                  id="levelFilter" 
+                  class="form-select"
+                  [(ngModel)]="levelFilter"
+                  (change)="applyFilters()">
+                  <option *ngFor="let level of levels" [value]="level">{{level}}</option>
+                </select>
+              </div>
+              
+              <div class="mb-3">
+                <label for="searchTerm" class="form-label">Search</label>
+                <input 
+                  type="text" 
+                  id="searchTerm" 
+                  class="form-control"
+                  [(ngModel)]="searchTerm"
+                  (input)="applyFilters()"
+                  placeholder="Search by title or instructor">
+              </div>
+              
+              <button class="btn btn-outline-secondary w-100" (click)="resetFilters()">
+                Reset Filters
+              </button>
+            </div>
+          </div>
+          
+          <div class="card mt-4 shadow-sm">
+            <div class="card-header bg-info text-white">
+              <h5 class="mb-0">About Fluentia</h5>
+            </div>
+            <div class="card-body">
+              <p>Fluentia Language School specializes in teaching spoken languages including English, French, German, Mandarin, Korean, and Japanese.</p>
+              <p>We are based in India with experienced native and non-native speaking instructors.</p>
+              <a href="#" class="btn btn-info text-white w-100">Contact Us</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="col-lg-9">
+          <div class="row">
+            <!-- Video Player -->
+            <div class="col-12 mb-4">
+              <div class="card shadow-sm">
+                <div class="card-body p-0">
+                  <div class="ratio ratio-16x9">
+                    <video *ngIf="selectedVideo" controls class="video-player">
+                      <source [src]="selectedVideo.videoUrl" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div class="p-3" *ngIf="selectedVideo">
+                    <h3>{{selectedVideo.title}}</h3>
+                    <div class="d-flex justify-content-between mb-2">
+                      <span class="badge bg-primary">{{selectedVideo.language}}</span>
+                      <span class="badge bg-secondary">{{selectedVideo.level}}</span>
+                      <span class="badge bg-info">{{selectedVideo.duration}}</span>
+                    </div>
+                    <p>{{selectedVideo.description}}</p>
+                    <p class="mb-0"><strong>Instructor:</strong> {{selectedVideo.instructor}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Video Thumbnails -->
+            <div class="col-12">
+              <h4 class="mb-3">Available Videos ({{filteredVideos.length}})</h4>
+              
+              <div *ngIf="filteredVideos.length === 0" class="alert alert-info">
+                No videos match your current filters. Try changing your filter criteria.
+              </div>
+              
+              <div class="row g-3">
+                <div *ngFor="let video of filteredVideos" class="col-md-6 col-lg-4">
+                  <div 
+                    class="card h-100 video-card shadow-sm" 
+                    [class.active]="selectedVideo?.id === video.id"
+                    (click)="selectVideo(video)">
+                    <div class="card-img-top position-relative">
+                      <img [src]="video.thumbnailUrl" class="img-fluid w-100" alt="{{video.title}}">
+                      <span class="badge bg-dark position-absolute bottom-0 end-0 m-2">{{video.duration}}</span>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">{{video.title}}</h5>
+                      <div class="d-flex mb-2">
+                        <span class="badge bg-primary me-2">{{video.language}}</span>
+                        <span class="badge bg-secondary">{{video.level}}</span>
+                      </div>
+                      <p class="card-text small">{{video.description | slice:0:80}}...</p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                      <small class="text-muted">Instructor: {{video.instructor}}</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

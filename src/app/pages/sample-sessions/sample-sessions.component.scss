@@ -1,0 +1,180 @@
+/* sample-videos.component.scss */
+@use "sass:color";
+// Custom Variables
+$fluentia-primary: #5D3A9B;
+$fluentia-secondary: #2c3e50;;
+$fluentia-accent: #e74c3c;
+$fluentia-light: #ecf0f1;
+$fluentia-dark: #2c3e50;
+
+.sample-videos-section {
+  background-color: $fluentia-light;
+  min-height: 100vh;
+  
+  h1 {
+    color: $fluentia-dark;
+    font-weight: 700;
+  }
+  
+  .lead {
+    color: $fluentia-primary;
+    font-weight: 500;
+  }
+}
+
+// Card styling
+.card {
+  transition: all 0.3s ease;
+  border: none;
+  overflow: hidden;
+  
+  .card-header {
+    font-weight: 600;
+  }
+}
+
+// Video card styling
+.video-card {
+  cursor: pointer;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  &.active {
+    border: 2px solid $fluentia-accent;
+    
+    .card-title {
+      color: $fluentia-accent;
+    }
+  }
+  
+  .card-img-top {
+    height: 160px;
+    overflow: hidden;
+    
+    img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+  }
+  
+  &:hover .card-img-top img {
+    transform: scale(1.05);
+  }
+}
+
+// Video player styling
+.video-player {
+  background-color: #000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+// Badge styling
+.badge {
+  font-weight: 500;
+  padding: 0.5em 0.8em;
+  
+  &.bg-primary {
+    background-color: $fluentia-primary !important;
+  }
+  
+  &.bg-secondary {
+    background-color: $fluentia-secondary !important;
+  }
+  
+  &.bg-info {
+    background-color: $fluentia-accent !important;
+  }
+}
+
+// Form controls
+.form-control, .form-select {
+  border-radius: 4px;
+  border: 1px solid #ced4da;
+  
+  &:focus {
+    border-color: $fluentia-primary;
+    box-shadow: 0 0 0 0.25rem rgba($fluentia-primary, 0.25);
+  }
+}
+
+// Buttons
+.btn-primary {
+    background-color: $fluentia-primary;
+    border-color: $fluentia-primary;
+  
+    &:hover,
+    &:focus {
+      background-color: color.adjust($fluentia-primary, $lightness: -10%);
+      border-color: color.adjust($fluentia-primary, $lightness: -10%);
+    }
+  }
+  
+  .btn-info {
+    background-color: $fluentia-accent;
+    border-color: $fluentia-accent;
+  
+    &:hover,
+    &:focus {
+      background-color: color.adjust($fluentia-accent, $lightness: -10%);
+      border-color: color.adjust($fluentia-accent, $lightness: -10%);
+    }
+  }
+// Responsive adjustments
+@media (max-width: 991.98px) {
+  .video-card .card-img-top {
+    height: 200px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .video-card .card-img-top {
+    height: 180px;
+  }
+}
+  
+  .video-card .card-title {
+    font-size: 1.2rem;
+  }
+  
+  .video-card .card-text {
+    font-size: 0.9rem;
+  }
+  
+  .video-player {
+    width: 100%;
+    height: auto;
+  }
+
+  .video-player .video-js {
+    width: 100%;
+    height: auto;
+  }
+  
+  .video-player .vjs-big-play-button {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+  
+  .video-player .vjs-control-bar {
+    font-size: 0.9rem;
+  }
+  
+  .video-player .vjs-progress-control {
+    height: 5px;
+  }
+  
+  .video-player .vjs-play-progress {
+    background-color: $fluentia-primary;
+  }
+  
+  .video-player .vjs-load-progress {
+    background-color: $fluentia-secondary;
+  }
+  
+  .video-player .vjs-slider-bar {
+    background-color: $fluentia-light;
+  }

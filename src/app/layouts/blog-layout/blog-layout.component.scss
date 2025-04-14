@@ -1,0 +1,36 @@
+.blog-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .blog-header {
+    h1 {
+      font-weight: 700;
+      color: #333;
+    }
+    
+    p {
+      color: #666;
+    }
+  }
+  
+  .blog-footer {
+    margin-top: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    
+    ul {
+      margin-bottom: 0;
+    }
+    
+    a {
+      color: #555;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      
+      &:hover {
+        color: #007bff;
+      }
+    }
+  }

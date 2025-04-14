@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+
+// Lavender Theme
+
+$primary: #B57EDC; // Main Lavender
+$primary-hover: #8B5FBF; // Darker Lavender for Hover
+$primary-text: #ffffff; // White text for contrast
+
+// Override Bootstrap button variables
+$btn-primary-color: $primary-text; // Text color inside button
+$btn-primary-bg: $primary; // Button background
+$btn-primary-border: $primary; // Border color
+
+$btn-primary-hover-color: $primary-text; // Text color on hover
+$btn-primary-hover-bg: $primary-hover; // Hover background
+$btn-primary-hover-border: $primary-hover; // Hover border
+
+
+@import 'bootstrap/scss/bootstrap';
+
+:root {
+  --primary-color: #5D3A9B;
+  --primary-dark-color: #472C76;
+  --secondary-color: #2c3e50;
+  --accent-color: #e74c3c;
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

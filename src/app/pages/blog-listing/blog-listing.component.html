@@ -1,0 +1,93 @@
+<app-blog-layout>
+    <div class="blog-listing">
+      <div class="row mb-4">
+        <div class="col-md-8">
+          <h2>Latest Articles</h2>
+        </div>
+        <div class="col-md-4">
+          <div class="input-group">
+            <input 
+              type="text" 
+              class="form-control" 
+              placeholder="Search posts..." 
+              [(ngModel)]="searchTerm"
+              (input)="filterPosts()"
+            >
+            <button class="btn btn-outline-secondary" type="button">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Category filters -->
+      <div class="category-filters mb-4">
+        <div class="d-flex flex-wrap gap-2">
+          <button 
+            class="btn" 
+            [ngClass]="{'btn-primary': selectedCategory === '', 'btn-outline-primary': selectedCategory !== ''}"
+            (click)="filterByCategory('')">
+            All
+          </button>
+          <button 
+            *ngFor="let category of uniqueCategories" 
+            class="btn" 
+            [ngClass]="{'btn-primary': selectedCategory === category, 'btn-outline-primary': selectedCategory !== category}"
+            (click)="filterByCategory(category)">
+            {{ category }}
+          </button>
+        </div>
+      </div>
+      
+      <!-- Blog posts grid -->
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <div class="col" *ngFor="let post of filteredPosts">
+          <div class="card h-100 blog-card">
+            <img 
+              [src]="post.imageSrc" 
+              class="card-img-top" 
+              [alt]="post.title"
+              loading="lazy">
+            <div class="card-body">
+              <div class="post-meta mb-2">
+                <span class="post-date">{{ post.publishDate | date:'mediumDate' }}</span>
+                <span class="post-read-time">{{ post.readTime }} min read</span>
+              </div>
+              <h3 class="card-title">{{ post.title }}</h3>
+              <p class="card-text">{{ post.summary }}</p>
+              <div class="post-categories mb-3">
+                <span 
+                  *ngFor="let category of post.categories" 
+                  class="badge bg-light text-dark me-1">
+                  {{ category }}
+                </span>
+              </div>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="post-author d-flex align-items-center">
+                  <img 
+                    *ngIf="post.author.avatar" 
+                    [src]="post.author.avatar" 
+                    class="author-avatar rounded-circle me-2" 
+                    [alt]="post.author.name">
+                  <span>{{ post.author.name }}</span>
+                </div>
+                <a [routerLink]="['/blog', post.slug]" class="btn btn-sm btn-outline-primary">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Empty state when no posts match filters -->
+      <div *ngIf="filteredPosts.length === 0" class="text-center py-5">
+        <div class="empty-state">
+          <i class="bi bi-journal-x" style="font-size: 3rem;"></i>
+          <h3 class="mt-3">No posts found</h3>
+          <p class="text-muted">Try adjusting your search or filter criteria</p>
+          <button class="btn btn-primary" (click)="resetFilters()">Reset Filters</button>
+        </div>
+      </div>
+    </div>
+  </app-blog-layout>

@@ -1,0 +1,127 @@
+<!-- src/app/components/enquiry-form/enquiry-form.component.html -->
+<div class="enquiry-form-overlay">
+    <div class="enquiry-form-container">
+      <div class="enquiry-form-header">
+        <h3>Get Started with Fluentia</h3>
+        <button type="button" class="btn-close" aria-label="Close" (click)="closeForm()"></button>
+      </div>
+      
+      <div class="enquiry-form-body">
+        <div *ngIf="!success" class="enquiry-form">
+          <p class="lead">Fill out this form and one of our language consultants will contact you within 24 hours.</p>
+          
+          <form [formGroup]="enquiryForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name*</label>
+              <input 
+                type="text" 
+                class="form-control" 
+                id="name" 
+                formControlName="name" 
+                [ngClass]="{'is-invalid': submitted && enquiryForm.get('name')?.errors}"
+              >
+              <div class="invalid-feedback" *ngIf="submitted && enquiryForm.get('name')?.errors?.['required']">
+                Name is required
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address*</label>
+              <input 
+                type="email" 
+                class="form-control" 
+                id="email" 
+                formControlName="email"
+                [ngClass]="{'is-invalid': submitted && enquiryForm.get('email')?.errors}"
+              >
+              <div class="invalid-feedback" *ngIf="submitted && enquiryForm.get('email')?.errors?.['required']">
+                Email is required
+              </div>
+              <div class="invalid-feedback" *ngIf="submitted && enquiryForm.get('email')?.errors?.['email']">
+                Please enter a valid email
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number*</label>
+              <input 
+                type="tel" 
+                class="form-control" 
+                id="phone" 
+                formControlName="phone"
+                [ngClass]="{'is-invalid': submitted && enquiryForm.get('phone')?.errors}"
+              >
+              <div class="invalid-feedback" *ngIf="submitted && enquiryForm.get('phone')?.errors?.['required']">
+                Phone number is required
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="language" class="form-label">Language Interested In*</label>
+                <select 
+                  class="form-select" 
+                  id="language" 
+                  formControlName="language"
+                  [ngClass]="{'is-invalid': submitted && enquiryForm.get('language')?.errors}"
+                >
+                  <option *ngFor="let lang of languages" [value]="lang">{{lang}}</option>
+                </select>
+              </div>
+              
+              <div class="col-md-6 mb-3">
+                <label for="level" class="form-label">Current Level*</label>
+                <select 
+                  class="form-select" 
+                  id="level" 
+                  formControlName="level"
+                  [ngClass]="{'is-invalid': submitted && enquiryForm.get('level')?.errors}"
+                >
+                  <option value="Beginner">Beginner</option>
+                  <option value="Intermediate">Intermediate</option>
+                  <option value="Advanced">Advanced</option>
+                  <option value="Study Abroad Prep">Study Abroad Prep</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="mb-3">
+              <label for="message" class="form-label">Additional Information</label>
+              <textarea 
+                class="form-control" 
+                id="message" 
+                rows="3" 
+                formControlName="message"
+              ></textarea>
+            </div>
+            
+            <div class="mb-3 form-check">
+              <input 
+                type="checkbox" 
+                class="form-check-input" 
+                id="consent" 
+                formControlName="consent"
+                [ngClass]="{'is-invalid': submitted && enquiryForm.get('consent')?.errors}"
+              >
+              <label class="form-check-label" for="consent">
+                I agree to be contacted about Fluentia Language School programs*
+              </label>
+              <div class="invalid-feedback" *ngIf="submitted && enquiryForm.get('consent')?.errors?.['required']">
+                You must agree before submitting
+              </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary w-100">Start My Language Journey</button>
+          </form>
+        </div>
+        
+        <div *ngIf="success" class="success-message text-center">
+          <div class="success-icon">
+            <i class="bi bi-check-circle-fill"></i>
+          </div>
+          <h4>Thank You!</h4>
+          <p>Your enquiry has been submitted successfully. One of our language consultants will contact you shortly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
