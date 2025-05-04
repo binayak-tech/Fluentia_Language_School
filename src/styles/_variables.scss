@@ -1,0 +1,57 @@
+// --- Primary Brand Colors (from logo) ---
+$light-lavender: #d0c4e8;    // Lightest purple from logo
+$medium-lavender: #b39ddb;   // Mid-tone purple from logo
+$dark-purple-1: #7459a5;      // Darker purple from logo
+$dark-purple-2: #7149b9;      // Alternative darker purple from logo
+
+// --- Core Website Palette ---
+$background: #FFFFFF;       // Primary website background (white for max readability)
+$alt-background: #f7f5fa; // Optional: Very light lavender tint alternative background
+
+$text-primary: #333333;      // Main body text (dark gray)
+$text-secondary: #555555; // Optional: Slightly lighter text for secondary info
+
+$heading-color: $dark-purple-1; // Headings (H1, H2, etc.)
+
+// --- Interactive Elements ---
+$link-color: $medium-lavender;       // Standard link color
+$link-hover-color: $dark-purple-1;   // Link hover color
+
+$button-primary-bg: $dark-purple-1;     // Primary button background
+$button-primary-text: #FFFFFF;           // Primary button text
+$button-primary-hover-bg: $medium-lavender; // Primary button hover background
+
+$button-secondary-bg: #FFFFFF;            // Secondary button background (white/transparent)
+$button-secondary-text: $dark-purple-1;  // Secondary button text
+$button-secondary-border: $dark-purple-1; // Secondary button border
+$button-secondary-hover-bg: $alt-background; // Secondary button hover background (very light tint)
+$button-secondary-hover-text: $dark-purple-1;// Secondary button hover text
+
+$button-secondary-alt-bg: $light-lavender;
+$button-secondary-alt-text: $dark-purple-1;
+
+// --- Accents & Borders ---
+$accent-light: $light-lavender;     // Light accent color
+$accent-medium: $medium-lavender;    // Medium accent color
+$border-light: #e0e0e0;             // Subtle border/divider color (light gray)
+$border-brand: $light-lavender;     // Brand-colored border
+
+// _variables.scss
+
+$primary-color: #5D3A9B;
+$primary-dark-color: #472C76;
+$secondary-color: #2c3e50;
+$accent-color: #e74c3c;
+$light-color: #ecf0f1;
+$dark-color: #2c3e50;
+
+$font-family-base: 'Roboto', sans-serif;
+
+// Bootstrap override variables (optional)
+$body-bg: #ffffff;
+$body-color: $dark-color;
+
+
+// Underlines
+
+$underline-primary: #3498db;

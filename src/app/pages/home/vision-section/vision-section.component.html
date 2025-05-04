@@ -1,0 +1,21 @@
+<section class="vision-section">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2 class="section-title">Our Vision</h2>
+        <div class="underline"></div>
+        <p class="section-subtitle">Building language proficiency through immersion and practice</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-4" *ngFor="let item of visionItems">
+          <div class="vision-card">
+            <div class="vision-icon">
+              <i class="fas" [ngClass]="item.icon"></i>
+            </div>
+            <h3 class="vision-title">{{ item.title }}</h3>
+            <p class="vision-description">{{ item.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
