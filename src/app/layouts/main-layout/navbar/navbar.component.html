@@ -33,12 +33,7 @@
                 <li><a routerLink="/careers" routerLinkActive="active" (click)="closeMenu()">Careers</a></li>
               </ul>
             </li>
-  
-            <!-- Corporate Training -->
-            <li>
-              <a routerLink="/corporate-training" routerLinkActive="active" (click)="closeMenu()">Corporate Training</a>
-            </li>
-  
+            
             <!-- Languages Dropdown -->
             <li class="has-dropdown" [ngClass]="{'active': activeDropdown === 'languages'}">
                 <a (click)="toggleDropdown('languages')">

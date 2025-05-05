@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CtaComponent } from "../../shared/components/cta/cta.component";
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, CtaComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
@@ -27,11 +28,6 @@ export class ContactComponent implements OnInit {
   
   ngOnInit(): void {
     // Any initialization logic here
-  }
-
-  openEnquiryForm(): void {
-    // Logic to open the enquiry form modal
-    // This would typically use a service to handle modal management
   }
   
   onSubmit(): void {

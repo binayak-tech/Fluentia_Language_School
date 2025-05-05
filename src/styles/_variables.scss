@@ -6,7 +6,7 @@ $dark-purple-2: #7149b9;      // Alternative darker purple from logo
 
 // --- Core Website Palette ---
 $background: #FFFFFF;       // Primary website background (white for max readability)
-$alt-background: #f7f5fa; // Optional: Very light lavender tint alternative background
+$alt-background: #f6f3fa; // Optional: Very light lavender tint alternative background
 
 $text-primary: #333333;      // Main body text (dark gray)
 $text-secondary: #555555; // Optional: Slightly lighter text for secondary info
@@ -41,7 +41,6 @@ $border-brand: $light-lavender;     // Brand-colored border
 $primary-color: #5D3A9B;
 $primary-dark-color: #472C76;
 $secondary-color: #2c3e50;
-$accent-color: #e74c3c;
 $light-color: #ecf0f1;
 $dark-color: #2c3e50;
 
@@ -53,5 +52,17 @@ $body-color: $dark-color;
 
 
 // Underlines
+$underline-blue: #3498db;
+$underline-red: #e74c3c;
 
-$underline-primary: #3498db;
+// text colors
+$text-color: #333333;
+$subtitle-color: #555555;
+$heading-color: #5D3A9B;
+$light-text: #ffffff;
+$dark-text: #000000;
+$light-gray: #f8f9fa;
+$dark-gray: #343a40;
+
+// footer background
+$footer-background: #1a2533;

@@ -8,3 +8,9 @@ export interface Language {
     difficulty: string;
     timeToFluency: string;
   }
+
+  export interface LanguageFlags {
+    name: string;
+    flag: string;
+    slug: string;
+  }

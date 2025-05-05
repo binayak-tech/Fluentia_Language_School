@@ -1,4 +1,6 @@
+@use "sass:color";
 @use '../../../../styles/variables' as *;
+@use '../../../../styles/utilities' as *;
 
 .why-choose-section {
   padding: 80px 0;
@@ -9,18 +11,16 @@
       font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 15px;
+      color: $heading-color;
     }
 
     .underline {
-      height: 3px;
-      width: 70px;
-      background-color: $underline-primary;
-      margin: 0 auto 20px;
+      @include underline-style-blue;
     }
 
     .section-subtitle {
       font-size: 1.1rem;
-      color: #666;
+      color: $subtitle-color;
     }
   }
 
@@ -67,7 +67,7 @@
         font-size: 1.25rem;
         font-weight: 600;
         margin: 0;
-        color: #fff;
+        color: $light-text;
       }
     }
   }

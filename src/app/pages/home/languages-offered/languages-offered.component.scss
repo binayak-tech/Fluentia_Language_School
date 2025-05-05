@@ -1,6 +1,10 @@
+@use "sass:color";
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/utilities' as *;
+
 .languages-section {
     padding: 5rem 0;
-    background-color: #f6f3fa;
+    background-color: $alt-background;
     
     .section-header {
       margin-bottom: 3rem;
@@ -8,15 +12,12 @@
       .section-title {
         font-size: 2.5rem;
         font-weight: 700;
-        color: var(--primary-color);
+        color: $heading-color;
         margin-bottom: 1rem;
       }
       
       .underline {
-        height: 4px;
-        width: 70px;
-        background-color: var(--accent-color);
-        margin: 0 auto 1.5rem;
+        @include underline-style-red;
       }
       
       .section-subtitle {

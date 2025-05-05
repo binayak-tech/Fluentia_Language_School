@@ -1,0 +1,18 @@
+@use "sass:color";
+@use "variables" as *;
+
+@mixin underline-style-blue {
+  height: 4px;
+  width: 80px;
+  background: linear-gradient(90deg, $underline-blue, color.adjust($underline-blue, $lightness: -15%));
+  margin: 0 auto 1.75rem;
+  border-radius: 4px;
+}
+
+@mixin underline-style-red {
+  height: 4px;
+  width: 80px;
+  background: linear-gradient(90deg, $underline-red, color.adjust($underline-red, $lightness: -15%));
+  margin: 0 auto 1.75rem;
+  border-radius: 4px;
+}

@@ -10,6 +10,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
 import { Subscription, interval } from 'rxjs';
 import { RouterModule } from '@angular/router';
 import { title } from 'process';
+import { HERO_ITEMS } from '../../data/home-hero-items';
 
 @Component({
   selector: 'app-home',
@@ -40,13 +41,7 @@ import { title } from 'process';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  heroItems = [
-    {image: 'assets/images/hero/hero-bg-1.jpg', title: 'Speak Fluently, Lead Confidently'},
-    {image: 'assets/images/hero/hero-bg-2.jpg', title: 'Ace your IELTS with Expert Guidance'},
-    {image: 'assets/images/hero/hero-bg-3.jpg', title: 'Speak Global Languages. Open Global Doors'},
-    {image: 'assets/images/hero/hero-bg-4.jpg', title: 'Fluent Learning. Right from your home.'}
-  ]
-  
+  heroItems = HERO_ITEMS;
   currentHeroImageIndex = 0;
   private imageRotationSubscription?: Subscription;
   

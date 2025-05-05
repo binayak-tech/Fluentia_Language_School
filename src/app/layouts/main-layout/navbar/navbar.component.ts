@@ -3,6 +3,7 @@ import { Component, EventEmitter, HostListener, Output } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Language } from '../../../models/Language.model';
 import { LanguageService } from '../../../services/language-service';
+import { EnquiryFormService } from '../../../services/enquiry-form-service';
 
 @Component({
   selector: 'app-navbar',
@@ -16,9 +17,11 @@ export class NavbarComponent {
   activeDropdown: string | null = null;
   languages: Language[] = [];
 
-  @Output() openForm = new EventEmitter<void>();
+  constructor(
+    private enquiryFormService: EnquiryFormService,
+    private languageService: LanguageService
+  ) {}
 
-  constructor(private languageService: LanguageService) {}
   ngOnInit(): void {
     this.languageService.getAllLanguages().subscribe(languages => {
       this.languages = languages;
@@ -55,6 +58,6 @@ export class NavbarComponent {
   }
 
   openEnquiryForm() {
-    this.openForm.emit();
+    this.enquiryFormService.openEnquiryForm();
   }
 }

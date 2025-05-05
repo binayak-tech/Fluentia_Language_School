@@ -1,0 +1,128 @@
+@use 'sass:color';
+@use '../../../styles/variables' as *;
+@use '../../../styles/utilities' as *;
+
+.career-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, $alt-background, color.adjust($alt-background, $lightness: -10%));
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -150px;
+    right: -150px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgba($underline-blue, 0.1);
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-header {
+    margin-bottom: 4rem;
+
+    .section-title {
+      font-size: 2.75rem;
+      font-weight: 800;
+      color: $heading-color;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        color: $underline-blue;
+        font-size: 2rem;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 2.25rem;
+
+        i {
+          font-size: 1.75rem;
+        }
+      }
+    }
+
+    .underline {
+      @include underline-style-blue;
+    }
+
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: $subtitle-color;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  }
+
+  .career-card {
+    background: $background;
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    @media (max-width: 768px) {
+      padding: 2rem;
+    }
+  }
+
+  .career-message {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $heading-color;
+    margin-bottom: 1.5rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .career-text {
+    font-size: 1.1rem;
+    color: $subtitle-color;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .career-btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba($heading-color, 0.3);
+    }
+  }
+
+  .career-subtext {
+    font-size: 0.95rem;
+    color: $subtitle-color;
+
+    a {
+      color: $underline-blue;
+      text-decoration: none;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
