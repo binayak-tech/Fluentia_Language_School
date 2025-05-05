@@ -1,6 +1,9 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+
+import { EnquiryFormService } from '../../../services/enquiry-form-service';
+
 @Component({
   selector: 'app-enquiry-form',
   imports: [CommonModule, ReactiveFormsModule],
@@ -8,7 +11,6 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
   styleUrl: './enquiry-form.component.scss'
 })
 export class EnquiryFormComponent {
-  @Output() close = new EventEmitter<void>();
   
   enquiryForm: FormGroup;
   submitted = false;
@@ -19,7 +21,10 @@ export class EnquiryFormComponent {
     'Italian', 'Mandarin', 'Japanese', 'Korean'
   ];
   
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private enquiryFormService: EnquiryFormService
+  ) {
     this.enquiryForm = this.fb.group({
       name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
@@ -31,10 +36,9 @@ export class EnquiryFormComponent {
     });
   }
   
-  closeForm() {
-    this.close.emit();
+  close() {
+    this.enquiryFormService.closeEnquiryForm();
   }
-  
   onSubmit() {
     this.submitted = true;
     
@@ -51,7 +55,7 @@ export class EnquiryFormComponent {
           this.enquiryForm.reset();
           this.submitted = false;
           this.success = false;
-          this.closeForm();
+          this.close();
         }, 3000);
       }, 1000);
     }

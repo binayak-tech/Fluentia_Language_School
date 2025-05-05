@@ -1,6 +1,6 @@
-<app-navbar (openForm)="openEnquiryForm()"></app-navbar>
+<app-navbar></app-navbar>
 <div class="content-wrapper">
   <router-outlet></router-outlet>
-  <app-enquiry-form *ngIf="showEnquiryForm" (close)="closeEnquiryForm()"></app-enquiry-form>
+  <app-enquiry-form *ngIf="showEnquiryForm"></app-enquiry-form>
 </div>
 <app-footer></app-footer>

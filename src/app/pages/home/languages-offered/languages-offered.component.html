@@ -1,0 +1,32 @@
+<section class="languages-section">
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2 class="section-title">Languages We Offer</h2>
+        <div class="underline"></div>
+        <p class="section-subtitle">Explore our wide range of language courses</p>
+      </div>
+      
+      <div class="language-carousel-container">
+        <div class="language-carousel" #carousel>
+          <ng-container *ngFor="let language of languages">
+            <a [routerLink]="['/languages', language.slug]" class="language-item">
+              <div class="language-flag">
+                <img [src]="language.flag" [alt]="language.name + ' flag'" class="flag-img">
+              </div>
+              <h3 class="language-name">{{ language.name }}</h3>
+            </a>
+          </ng-container>
+          
+          <!-- Duplicate languages for infinite scroll effect -->
+          <ng-container *ngFor="let language of languages">
+            <a [routerLink]="['/languages', language.slug]" class="language-item">
+              <div class="language-flag">
+                <img [src]="language.flag" [alt]="language.name + ' flag'" class="flag-img">
+              </div>
+              <h3 class="language-name">{{ language.name }}</h3>
+            </a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </section>

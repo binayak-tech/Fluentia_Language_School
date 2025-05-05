@@ -1,0 +1,67 @@
+@use "sass:color";
+@use '../../../../styles/variables' as *;
+@use '../../../../styles/utilities' as *;
+
+.vision-section {
+  padding: 6rem 0;
+  background-color: $alt-background;
+
+
+  .section-header {
+    margin-bottom: 4rem;
+    text-align: center;
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: $primary-color;
+
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+
+    .underline {
+      @include underline-style-red;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: $subtitle-color;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.5;
+      opacity: 0.9;
+
+      @media (max-width: 768px) {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .vision-text {
+    font-size: 1.3rem;
+    color: $text-color;
+    line-height: 1.7;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+      padding: 1.5rem;
+    }
+
+    // Lift effect on hover
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
