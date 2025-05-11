@@ -1,57 +1,82 @@
 import { Routes } from '@angular/router';
-import { LanguageDetailComponent } from './pages/languages/language-detail/language-detail.component';
 import { BlogListingComponent } from './pages/blog-listing/blog-listing.component';
 import { BlogViewComponent } from './pages/blog-view/blog-view.component';
+import { LanguagePageComponent } from './pages/languages/language-page/language-page.component';
+import { CourseComponent } from './pages/course/course.component';
+import { CoursePageComponent } from './pages/course-page/course-page.component';
 
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent)
+    loadComponent: () =>
+      import('./pages/home/home.component').then((m) => m.HomeComponent),
   },
   {
     path: 'about',
-    loadComponent: () => import('./pages/about/about.component').then(m => m.AboutComponent)
+    loadComponent: () =>
+      import('./pages/about/about.component').then((m) => m.AboutComponent),
   },
   {
     path: 'careers',
-    loadComponent: () => import('./pages/career/career.component').then(m => m.CareerComponent)
+    loadComponent: () =>
+      import('./pages/career/career.component').then((m) => m.CareerComponent),
   },
   {
     path: 'contact',
-    loadComponent: () => import('./pages/contact/contact.component').then(m => m.ContactComponent)
+    loadComponent: () =>
+      import('./pages/contact/contact.component').then(
+        (m) => m.ContactComponent
+      ),
   },
   {
     path: 'faq',
-    loadComponent: () => import('./pages/faq/faq.component').then(m => m.FaqComponent)
+    loadComponent: () =>
+      import('./pages/faq/faq.component').then((m) => m.FaqComponent),
   },
   {
     path: 'sample-sessions',
-    loadComponent: () => import('./pages/sample-sessions/sample-sessions.component').then(m => m.SampleSessionsComponent)
+    loadComponent: () =>
+      import('./pages/sample-sessions/sample-sessions.component').then(
+        (m) => m.SampleSessionsComponent
+      ),
   },
   {
     path: 'languages/:language',
-    component: LanguageDetailComponent
+    component: LanguagePageComponent,
   },
   {
     path: 'languages',
     redirectTo: '/',
-    pathMatch: 'full'
+    pathMatch: 'full',
+  },
+  // COURSE ROUTES
+  {
+    path: 'english/:course',
+    component: CourseComponent,
+  },
+  {
+    path: 'english',
+    redirectTo: '/',
+    pathMatch: 'full',
   },
   // Blog routes
   {
     path: 'blogs',
-    component: BlogListingComponent
+    component: BlogListingComponent,
   },
   {
     path: 'blog/:slug',
-    component: BlogViewComponent
+    component: BlogViewComponent,
   },
   {
     path: 'not-found',
-    loadComponent: () => import('./pages/not-found/not-found.component').then(m => m.NotFoundComponent)
+    loadComponent: () =>
+      import('./pages/not-found/not-found.component').then(
+        (m) => m.NotFoundComponent
+      ),
   },
   {
     path: '**',
-    redirectTo: '/not-found'
-  }
+    redirectTo: '/not-found',
+  },
 ];

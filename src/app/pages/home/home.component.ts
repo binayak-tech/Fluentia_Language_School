@@ -1,4 +1,10 @@
-import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
+import {
+  Component,
+  Inject,
+  OnDestroy,
+  OnInit,
+  PLATFORM_ID,
+} from '@angular/core';
 import { HeroSectionComponent } from './hero-section/hero-section.component';
 import { LanguagesOfferedComponent } from './languages-offered/languages-offered.component';
 import { SuccessStoriesComponent } from './success-stories/success-stories.component';
@@ -11,6 +17,7 @@ import { Subscription, interval } from 'rxjs';
 import { RouterModule } from '@angular/router';
 import { title } from 'process';
 import { HERO_ITEMS } from '../../data/home-hero-items';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +30,7 @@ import { HERO_ITEMS } from '../../data/home-hero-items';
     WhyChooseUsComponent,
     LanguagesOfferedComponent,
     SuccessStoriesComponent,
-    CtaComponent
+    CtaComponent,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
@@ -33,35 +40,37 @@ import { HERO_ITEMS } from '../../data/home-hero-items';
         style({ opacity: 0 }),
         animate('300ms', style({ opacity: 1 })),
       ]),
-      transition(':leave', [
-        animate('300ms', style({ opacity: 0 }))
-      ])
-    ])
-  ]
+      transition(':leave', [animate('300ms', style({ opacity: 0 }))]),
+    ]),
+  ],
 })
 export class HomeComponent implements OnInit, OnDestroy {
-
   heroItems = HERO_ITEMS;
   currentHeroImageIndex = 0;
   private imageRotationSubscription?: Subscription;
-  
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
-  
+
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private titleService: Title
+  ) {}
+
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       // Only run image rotation in browser context (not during SSR)
       this.imageRotationSubscription = interval(5000).subscribe(() => {
-        this.currentHeroImageIndex = (this.currentHeroImageIndex + 1) % this.heroItems.length;
+        this.currentHeroImageIndex =
+          (this.currentHeroImageIndex + 1) % this.heroItems.length;
       });
     }
+    this.titleService.setTitle('Home | Fluentia Language School');
   }
-  
+
   ngOnDestroy(): void {
     if (this.imageRotationSubscription) {
       this.imageRotationSubscription.unsubscribe();
     }
   }
-  
+
   getCurrentHeroItem() {
     return this.heroItems[this.currentHeroImageIndex];
   }
