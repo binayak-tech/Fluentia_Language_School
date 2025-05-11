@@ -1,0 +1,300 @@
+<div
+  class="language-page"
+  *ngIf="content"
+  [ngStyle]="{ '--primary-color': content.color }"
+>
+  <!-- Loading Spinner -->
+  <div class="loading-container" *ngIf="loading">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section" @fadeIn>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 hero-content">
+          <h1 class="display-4 mb-3">{{ content.title }}</h1>
+          <p class="lead mb-4">{{ content.description }}</p>
+          <div class="hero-buttons">
+            <button
+              class="btn btn-primary me-3"
+              (click)="scrollToSection('courses')"
+            >
+              <i class="fas fa-book-open me-2"></i>Explore Courses
+            </button>
+            <button
+              class="btn btn-outline-primary"
+              (click)="scrollToSection('contact')"
+            >
+              <i class="fas fa-calendar-check me-2"></i>Book Free Trial
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-6 hero-image">
+          <img
+            [src]="content.imageMain"
+            [alt]="content.name + ' language'"
+            class="img-fluid rounded shadow"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Navigation -->
+  <nav class="quick-nav" @fadeIn>
+    <div class="container">
+      <div class="quick-nav-wrapper">
+        <button class="nav-pill" (click)="scrollToSection('benefits')">
+          <i class="fas fa-star"></i>Benefits
+        </button>
+        <button class="nav-pill" (click)="scrollToSection('methodology')">
+          <i class="fas fa-chalkboard-teacher"></i>Methodology
+        </button>
+        <button class="nav-pill" (click)="scrollToSection('certification')">
+          <i class="fas fa-certificate"></i>Certification
+        </button>
+        <button class="nav-pill" (click)="scrollToSection('testimonials')">
+          <i class="fas fa-comment-dots"></i>Testimonials
+        </button>
+        <button class="nav-pill" (click)="scrollToSection('courses')">
+          <i class="fas fa-graduation-cap"></i>Courses
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Benefits Section -->
+  <section id="benefits" class="benefits-section" @fadeIn>
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2>{{ content.benefitTitle }}</h2>
+        <div class="header-underline"></div>
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <div class="col" *ngFor="let benefit of content.benefits">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas {{ benefit.icon }}"></i>
+            </div>
+            <h3 class="benefit-title">{{ benefit.title }}</h3>
+            <p class="benefit-description">{{ benefit.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Methodology Section -->
+  <section id="methodology" class="methodology-section" @fadeIn>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 methodology-image">
+          <img
+            [src]="content.imageSecondary"
+            [alt]="content.name + ' culture'"
+            class="img-fluid rounded shadow"
+          />
+        </div>
+        <div class="col-lg-6 methodology-content">
+          <div class="section-header">
+            <h2>{{ content.methodologyTitle }}</h2>
+            <div class="header-underline"></div>
+          </div>
+          <p class="methodology-text">{{ content.methodology }}</p>
+          <div class="methodology-features">
+            <div class="feature">
+              <i class="fas fa-comments"></i>
+              <span>Conversation-based</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-laptop"></i>
+              <span>Multimedia Resources</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-users"></i>
+              <span>Small Group Size</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-tasks"></i>
+              <span>Practical Exercises</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certification Section -->
+  <section id="certification" class="certification-section" @fadeIn>
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2>{{ content.examTitle }}</h2>
+        <div class="header-underline"></div>
+        <p class="lead">{{ content.examDescription }}</p>
+      </div>
+      <div class="certification-wrapper">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="certification-list">
+              <div
+                class="certification-item"
+                *ngFor="let exam of content.exams; let i = index"
+              >
+                <div class="certification-number">{{ i + 1 }}</div>
+                <div class="certification-text">{{ exam }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials-section" @fadeIn>
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2>Student Success Stories</h2>
+        <div class="header-underline"></div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="testimonials-carousel">
+            <div class="row">
+              <div
+                class="col-md-6 mb-4"
+                *ngFor="let testimonial of content.testimonials"
+              >
+                <div class="testimonial-card">
+                  <div class="testimonial-content">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p>{{ testimonial.text }}</p>
+                    <div class="testimonial-author">
+                      <img
+                        [src]="testimonial.avatar"
+                        [alt]="testimonial.name"
+                        class="testimonial-avatar"
+                      />
+                      <span class="testimonial-name">{{
+                        testimonial.name
+                      }}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section id="courses" class="courses-section" @fadeIn>
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2>Our {{ content.name }} Courses</h2>
+        <div class="header-underline"></div>
+      </div>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Course Card 1 -->
+        <div class="col">
+          <div class="course-card">
+            <div class="course-level beginner">Beginner</div>
+            <div class="course-content">
+              <h3>{{ content.name }} for Beginners</h3>
+              <ul class="course-features">
+                <li><i class="fas fa-check"></i> Build basic vocabulary</li>
+                <li><i class="fas fa-check"></i> Master essential grammar</li>
+                <li><i class="fas fa-check"></i> Develop pronunciation</li>
+                <li><i class="fas fa-check"></i> Simple conversations</li>
+              </ul>
+              <div class="course-details">
+                <div class="course-detail">
+                  <i class="fas fa-clock"></i>
+                  <span>8 weeks</span>
+                </div>
+                <div class="course-detail">
+                  <i class="fas fa-signal"></i>
+                  <span>A1-A2 Level</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course Card 2 -->
+        <div class="col">
+          <div class="course-card">
+            <div class="course-level intermediate">Intermediate</div>
+            <div class="course-content">
+              <h3>{{ content.name }} Intermediate</h3>
+              <ul class="course-features">
+                <li>
+                  <i class="fas fa-check"></i> Complex grammatical structures
+                </li>
+                <li><i class="fas fa-check"></i> Expanded vocabulary</li>
+                <li><i class="fas fa-check"></i> Fluent conversations</li>
+                <li><i class="fas fa-check"></i> Cultural understanding</li>
+              </ul>
+              <div class="course-details">
+                <div class="course-detail">
+                  <i class="fas fa-clock"></i>
+                  <span>10 weeks</span>
+                </div>
+                <div class="course-detail">
+                  <i class="fas fa-signal"></i>
+                  <span>B1-B2 Level</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course Card 3 -->
+        <div class="col">
+          <div class="course-card">
+            <div class="course-level advanced">Advanced</div>
+            <div class="course-content">
+              <h3>{{ content.name }} Advanced</h3>
+              <ul class="course-features">
+                <li><i class="fas fa-check"></i> Native-like proficiency</li>
+                <li><i class="fas fa-check"></i> Professional vocabulary</li>
+                <li><i class="fas fa-check"></i> Exam preparation</li>
+                <li><i class="fas fa-check"></i> Literary analysis</li>
+              </ul>
+              <div class="course-details">
+                <div class="course-detail">
+                  <i class="fas fa-clock"></i>
+                  <span>12 weeks</span>
+                </div>
+                <div class="course-detail">
+                  <i class="fas fa-signal"></i>
+                  <span>C1-C2 Level</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <app-cta id="contact"></app-cta>
+</div>
+
+<!-- Fallback message if language content not found -->
+<div class="language-not-found" *ngIf="!loading && !content">
+  <div class="container text-center py-5">
+    <i class="fas fa-exclamation-circle fa-4x text-warning mb-4"></i>
+    <h2>Language Not Found</h2>
+    <p class="lead">We couldn't find information for the requested language.</p>
+    <a routerLink="/languages" class="btn btn-primary mt-3"
+      >Browse All Languages</a
+    >
+  </div>
+</div>

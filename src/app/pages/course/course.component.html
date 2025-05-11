@@ -1,0 +1,223 @@
+<div
+  class="course-page"
+  *ngIf="courseData"
+  [ngStyle]="{ '--course-color': courseData.color }"
+>
+  <!-- Loading Spinner -->
+  <div class="loading-container" *ngIf="loading">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section" @fadeIn>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 hero-content">
+          <div class="course-badge">{{ courseData.type }}</div>
+          <h1 class="display-4 mb-3">{{ courseData.title }}</h1>
+          <p class="lead mb-4">{{ courseData.description }}</p>
+          <div class="hero-features">
+            <div class="feature">
+              <i class="fas fa-clock"></i>
+              <span>{{ courseData.duration }}</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-signal"></i>
+              <span>{{ courseData.level }}</span>
+            </div>
+            <div class="feature">
+              <i class="fas fa-users"></i>
+              <span>{{ courseData.groupSize }} Students Max</span>
+            </div>
+          </div>
+          <div class="hero-buttons">
+            <button class="btn btn-primary me-3">
+              <i class="fas fa-calendar-check me-2"></i>Book Free Trial
+            </button>
+            <button class="btn btn-outline-primary">
+              <i class="fas fa-download me-2"></i>Download Syllabus
+            </button>
+          </div>
+        </div>
+        <div class="col-lg-6 hero-image">
+          <img
+            [src]="courseData.heroImage"
+            [alt]="courseData.name"
+            class="img-fluid rounded shadow"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="hero-wave">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220">
+        <path
+          fill="#ffffff"
+          fill-opacity="1"
+          d="M0,160L48,144C96,128,192,96,288,90.7C384,85,480,107,576,122.7C672,139,768,149,864,138.7C960,128,1056,96,1152,80C1248,64,1344,64,1392,64L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+        ></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- What You Will Learn Section -->
+  <section id="learning" class="learning-section" @fadeIn>
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2>What You Will Learn</h2>
+        <div class="header-underline"></div>
+        <p class="lead">
+          By the end of this course, you'll be equipped with all the skills
+          needed to excel in
+          {{ courseData.name }}
+        </p>
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <div class="col" *ngFor="let skill of courseData.keySkills">
+          <div class="learning-card">
+            <div class="learning-icon">
+              <i class="fas {{ skill.icon }}"></i>
+            </div>
+            <h3 class="learning-title">{{ skill.title }}</h3>
+            <p class="learning-description">{{ skill.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learning Approach Section -->
+  <section id="approach" class="approach-section" @fadeIn>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 approach-image">
+          <img
+            [src]="courseData.approachImage"
+            [alt]="'Learning approach for ' + courseData.name"
+            class="img-fluid rounded shadow"
+          />
+        </div>
+        <div class="col-lg-6 approach-content">
+          <div class="section-header">
+            <h2>Our Learning Approach</h2>
+            <div class="header-underline"></div>
+          </div>
+          <p class="approach-text">{{ courseData.approach }}</p>
+          <div class="approach-features">
+            <div
+              class="feature"
+              *ngFor="let feature of courseData.approachFeatures"
+            >
+              <i class="fas {{ feature.icon }}"></i>
+              <div class="feature-content">
+                <h4>{{ feature.title }}</h4>
+                <p>{{ feature.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Modules Section -->
+  <section id="modules" class="modules-section" @fadeIn>
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2>Course Modules</h2>
+        <div class="header-underline"></div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div
+          class="col-md-4 mb-4"
+          *ngFor="let module of courseData.curriculum; let i = index"
+        >
+          <div class="module-card">
+            <div class="module-illustration">
+              <img
+                [src]="module.illustration"
+                [alt]="module.title"
+                class="img-fluid"
+              />
+            </div>
+            <div class="module-content">
+              <div class="module-number">Module {{ i + 1 }}</div>
+              <h4 class="module-title">{{ module.title }}</h4>
+              <ul class="module-topics">
+                <li *ngFor="let topic of module.topics">
+                  <i class="fas fa-check-circle"></i> {{ topic }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Stories Section -->
+  <section id="success" class="success-section" @fadeIn>
+    <div class="container">
+      <div class="section-header text-center mb-5">
+        <h2>Success Stories</h2>
+        <div class="header-underline"></div>
+        <p class="lead">
+          See what our students have achieved after completing this course
+        </p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="success-carousel">
+            <div class="row">
+              <div
+                class="col-md-6 mb-4"
+                *ngFor="let story of courseData.successStories"
+              >
+                <div class="success-card">
+                  <div class="success-content">
+                    <div class="success-achievement">
+                      <span class="achievement-badge">{{
+                        story.achievement
+                      }}</span>
+                    </div>
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p>{{ story.quote }}</p>
+                    <div class="success-author">
+                      <img
+                        [src]="story.avatar"
+                        [alt]="story.name"
+                        class="success-avatar"
+                      />
+                      <div class="author-info">
+                        <span class="author-name">{{ story.name }}</span>
+                        <span class="author-title">{{ story.title }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section (Imported Component) -->
+  <app-cta></app-cta>
+</div>
+
+<!-- Fallback if courseData is not found -->
+<div class="course-not-found" *ngIf="!loading && !courseData">
+  <div class="container text-center py-5">
+    <i class="fas fa-exclamation-circle fa-4x text-warning mb-4"></i>
+    <h2>Course Not Found</h2>
+    <p class="lead">
+      We couldn't find the requested course. Please check the URL or browse our
+      available courses.
+    </p>
+    <a routerLink="/" class="btn btn-primary mt-3">Home</a>
+  </div>
+</div>
