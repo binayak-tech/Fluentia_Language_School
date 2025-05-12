@@ -1,178 +1,399 @@
-<div class="hero-section contact-hero">
+<!-- Modern Hero Section -->
+<div class="hero-section">
+  <div class="hero-content">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-lg-6">
-          <h1>Get in Touch</h1>
-          <p class="lead">Have questions about our programs? Contact our team for personalized assistance.</p>
-          <div class="hero-buttons">
-          </div>
+        <div class="col-lg-6 hero-text-container">
+          <h1 class="animate-on-scroll">Get in Touch</h1>
+          <p class="lead animate-on-scroll">
+            Have questions about our language programs? Our team is here to help
+            you navigate your learning journey.
+          </p>
         </div>
-        <div class="col-lg-6">
-          <img src="assets/images/contact-illustration.svg" alt="Contact Us" class="img-fluid">
+        <div
+          class="col-lg-6 d-flex justify-content-center justify-content-lg-end"
+        >
+          <div class="hero-image animate-on-scroll">
+            <img src="assets/images/contact.png" alt="Contact Us" />
+          </div>
         </div>
       </div>
     </div>
   </div>
-  
-  <section class="contact-details-section">
-    <div class="container">
-      <div class="row">
-        <!-- <div class="col-md-4">
-          <div class="contact-card">
-            <div class="contact-icon">
-              <i class="bi bi-geo-alt"></i>
-            </div>
-            <h3>Visit Us</h3>
-            <p>123 Language Street<br>Education District<br>City, Country</p>
+</div>
+
+<!-- Contact Cards Section -->
+<section class="contact-info-section">
+  <div class="container">
+    <div class="section-title text-center animate-on-scroll">
+      <h2>How to Reach Us</h2>
+      <div class="separator"></div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="contact-card animate-on-scroll">
+          <div class="icon-wrapper">
+            <i class="bi bi-telephone-fill"></i>
           </div>
-        </div> -->
-        <div class="col-md-6">
-          <div class="contact-card">
-            <div class="contact-icon">
-              <i class="bi bi-telephone"></i>
-            </div>
-            <h3>Call Us</h3>
-            <p>+91 76001 42145</p>
-            <p class="contact-timing">Mon-Sat: 9AM - 8PM</p>
-          </div>
+          <h3>Call Us</h3>
+          <p class="mb-1">+91 76001 42145</p>
+          <p class="contact-timing">Monday - Saturday: 9AM - 8PM</p>
+          <a href="tel:+917600142145" class="contact-action">Call Now</a>
         </div>
-        <div class="col-md-6">
-          <div class="contact-card">
-            <div class="contact-icon">
-              <i class="bi bi-envelope"></i>
-            </div>
-            <h3>Email Us</h3>
-            <p>info&#64;fluentialanguageschool.com<br>admissions&#64;fluentialanguageschool.com</p>
+      </div>
+
+      <div class="col-md-4">
+        <div class="contact-card animate-on-scroll">
+          <div class="icon-wrapper">
+            <i class="bi bi-envelope-fill"></i>
           </div>
+          <h3>Email Us</h3>
+          <p class="mb-1">info&#64;fluentialanguageschool.com</p>
+          <p class="mb-3">admissions&#64;fluentialanguageschool.com</p>
+          <a
+            href="mailto:info@fluentialanguageschool.com"
+            class="contact-action"
+            >Send Email</a
+          >
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="contact-card animate-on-scroll">
+          <div class="icon-wrapper">
+            <i class="bi bi-instagram"></i>
+          </div>
+          <h3>Follow Us on Instagram</h3>
+          <p class="mb-3">
+            Stay updated with our latest courses and join our community on
+            Instagram!
+          </p>
+          <a
+            href="https://www.instagram.com/fluentiaa_official/"
+            class="contact-action"
+            >Follow Now</a
+          >
         </div>
       </div>
     </div>
-  </section>
-  
-  <section class="contact-form-section" id="contact-form">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="map-container">
-            <h2>Find Us</h2>
-            <div class="map-placeholder">
-              <!-- In a real app, you would embed a Google Map here -->
-              <img src="assets/images/map-placeholder.jpg" alt="Location Map" class="img-fluid">
-            </div>
-            <div class="social-links mt-4">
-              <h3>Connect With Us</h3>
-              <div class="social-icons">
-                <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
-                <a href="#" class="social-icon"><i class="bi bi-youtube"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="form-container">
+  </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="form-section" id="contact-form">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="form-container animate-on-scroll">
+          <div class="form-header">
             <h2>Send Us a Message</h2>
-            <p class="mb-4">Fill out the form below and we'll get back to you as soon as possible.</p>
-            
-            <div *ngIf="success" class="alert alert-success">
-              Thank you for contacting us! We'll get back to you shortly.
-            </div>
-            
-            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-              <div class="mb-3">
-                <label for="name" class="form-label">Full Name*</label>
-                <input 
-                  type="text" 
-                  class="form-control" 
-                  id="name" 
-                  formControlName="name"
-                  [ngClass]="{'is-invalid': submitted && contactForm.controls['name'].errors}"
-                >
-                <div *ngIf="submitted && contactForm.controls['name'].errors" class="invalid-feedback">
-                  Please enter your name
-                </div>
+            <p>
+              We'd love to hear from you. Fill out the form and we'll get back
+              to you as soon as possible.
+            </p>
+          </div>
+
+          <div *ngIf="success" class="alert alert-success slide-in">
+            <i class="bi bi-check-circle-fill me-2"></i>
+            Thank you for reaching out! We've received your message and will
+            contact you shortly.
+          </div>
+
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                placeholder="Your Name"
+                formControlName="name"
+                [ngClass]="{
+                  'is-invalid': submitted && contactForm.controls['name'].errors
+                }"
+              />
+              <label for="name">Full Name*</label>
+              <div
+                *ngIf="submitted && contactForm.controls['name'].errors"
+                class="invalid-feedback"
+              >
+                Please enter your name
               </div>
-              
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <label for="email" class="form-label">Email Address*</label>
-                  <input 
-                    type="email" 
-                    class="form-control" 
-                    id="email" 
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="name@example.com"
                     formControlName="email"
-                    [ngClass]="{'is-invalid': submitted && contactForm.controls['email'].errors}"
+                    [ngClass]="{
+                      'is-invalid':
+                        submitted && contactForm.controls['email'].errors
+                    }"
+                  />
+                  <label for="email">Email Address*</label>
+                  <div
+                    *ngIf="submitted && contactForm.controls['email'].errors"
+                    class="invalid-feedback"
                   >
-                  <div *ngIf="submitted && contactForm.controls['email'].errors" class="invalid-feedback">
                     Please enter a valid email address
                   </div>
                 </div>
-                
-                <div class="col-md-6 mb-3">
-                  <label for="phone" class="form-label">Phone Number*</label>
-                  <input 
-                    type="tel" 
-                    class="form-control" 
-                    id="phone" 
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-floating mb-3">
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="phone"
+                    placeholder="+91 1234567890"
                     formControlName="phone"
-                    [ngClass]="{'is-invalid': submitted && contactForm.controls['phone'].errors}"
+                    [ngClass]="{
+                      'is-invalid':
+                        submitted && contactForm.controls['phone'].errors
+                    }"
+                  />
+                  <label for="phone">Phone Number*</label>
+                  <div
+                    *ngIf="submitted && contactForm.controls['phone'].errors"
+                    class="invalid-feedback"
                   >
-                  <div *ngIf="submitted && contactForm.controls['phone'].errors" class="invalid-feedback">
                     Please enter your phone number
                   </div>
                 </div>
               </div>
-              
-              <div class="mb-3">
-                <label for="subject" class="form-label">Subject*</label>
-                <input 
-                  type="text" 
-                  class="form-control" 
-                  id="subject" 
-                  formControlName="subject"
-                  [ngClass]="{'is-invalid': submitted && contactForm.controls['subject'].errors}"
-                >
-                <div *ngIf="submitted && contactForm.controls['subject'].errors" class="invalid-feedback">
-                  Please enter a subject
-                </div>
+            </div>
+
+            <div class="form-floating mb-3">
+              <select
+                class="form-select"
+                id="subject"
+                formControlName="subject"
+                [ngClass]="{
+                  'is-invalid':
+                    submitted && contactForm.controls['subject'].errors
+                }"
+              >
+                <option value="" disabled selected>Select a subject</option>
+                <option value="Course Inquiry">Course Inquiry</option>
+                <option value="Admission Process">Admission Process</option>
+                <option value="Schedule Consultation">
+                  Schedule Consultation
+                </option>
+                <option value="Fee Structure">Fee Structure</option>
+                <option value="Other">Other</option>
+              </select>
+              <!-- <label for="subject">Subject*</label> -->
+              <div
+                *ngIf="submitted && contactForm.controls['subject'].errors"
+                class="invalid-feedback"
+              >
+                Please select a subject
               </div>
-              
-              <div class="mb-3">
-                <label for="message" class="form-label">Message*</label>
-                <textarea 
-                  class="form-control" 
-                  id="message" 
-                  rows="5" 
-                  formControlName="message"
-                  [ngClass]="{'is-invalid': submitted && contactForm.controls['message'].errors}"
-                ></textarea>
-                <div *ngIf="submitted && contactForm.controls['message'].errors" class="invalid-feedback">
-                  Please enter your message
-                </div>
+            </div>
+
+            <div class="form-floating mb-3">
+              <textarea
+                class="form-control"
+                id="message"
+                placeholder="Your message"
+                style="height: 120px"
+                formControlName="message"
+                [ngClass]="{
+                  'is-invalid':
+                    submitted && contactForm.controls['message'].errors
+                }"
+              ></textarea>
+              <label for="message">Message*</label>
+              <div
+                *ngIf="submitted && contactForm.controls['message'].errors"
+                class="invalid-feedback"
+              >
+                Please enter your message
               </div>
-              
-              <div class="mb-4 form-check">
-                <input 
-                  type="checkbox" 
-                  class="form-check-input" 
-                  id="consent" 
-                  formControlName="consent"
-                  [ngClass]="{'is-invalid': submitted && contactForm.controls['consent'].errors}"
-                >
-                <label class="form-check-label" for="consent">
-                  I agree to the processing of my personal data according to Fluentia's <a href="#">Privacy Policy</a>*
-                </label>
-                <div *ngIf="submitted && contactForm.controls['consent'].errors" class="invalid-feedback">
-                  You must agree to the privacy policy
-                </div>
+            </div>
+
+            <div class="form-check mb-4">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="consent"
+                formControlName="consent"
+                [ngClass]="{
+                  'is-invalid':
+                    submitted && contactForm.controls['consent'].errors
+                }"
+              />
+              <label class="form-check-label" for="consent">
+                I agree to the processing of my personal data according to
+                Fluentia's <a href="#">Privacy Policy</a>*
+              </label>
+              <div
+                *ngIf="submitted && contactForm.controls['consent'].errors"
+                class="invalid-feedback"
+              >
+                You must agree to the privacy policy
               </div>
-              
-              <button type="submit" class="btn btn-primary w-100">Send Message</button>
-            </form>
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-primary w-100"
+              [disabled]="loading"
+            >
+              <span
+                *ngIf="loading"
+                class="spinner-border spinner-border-sm me-2"
+                role="status"
+                aria-hidden="true"
+              ></span>
+              {{ loading ? "Sending..." : "Send Message" }}
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="location-map-container animate-on-scroll" id="location-map">
+          <div class="map-header">
+            <h2>Find Us</h2>
+          </div>
+          <div class="map-wrapper">
+            <img
+              src="assets/images/contact-map.jpg"
+              alt="Location Map"
+              class="img-fluid"
+            />
+          </div>
+
+          <div class="address-container">
+            <div class="address-icon">
+              <i class="bi bi-pin-map-fill"></i>
+            </div>
+            <div class="address-text">
+              <h4>Fluentia Language School</h4>
+              <p>Rangadhipa, Sundargarh<br />Odisha, India 770001</p>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <h3>Connect With Us</h3>
+            <div class="social-icons">
+              <a href="#" class="social-icon" aria-label="Facebook">
+                <i class="bi bi-facebook"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="Instagram">
+                <i class="bi bi-instagram"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="LinkedIn">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="YouTube">
+                <i class="bi bi-youtube"></i>
+              </a>
+              <a href="#" class="social-icon" aria-label="Twitter">
+                <i class="bi bi-twitter-x"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-title text-center animate-on-scroll">
+      <h2>Frequently Asked Questions</h2>
+      <div class="separator"></div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="accordion" id="contactFAQ">
+          <div class="accordion-item animate-on-scroll">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq1"
+              >
+                How soon can I expect a response after submitting my inquiry?
+              </button>
+            </h2>
+            <div
+              id="faq1"
+              class="accordion-collapse collapse"
+              data-bs-parent="#contactFAQ"
+            >
+              <div class="accordion-body">
+                We typically respond to all inquiries within 24 hours during
+                business days. For urgent matters, we recommend giving us a call
+                directly.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item animate-on-scroll">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq2"
+              >
+                Can I visit your office in person?
+              </button>
+            </h2>
+            <div
+              id="faq2"
+              class="accordion-collapse collapse"
+              data-bs-parent="#contactFAQ"
+            >
+              <div class="accordion-body">
+                As a new company, we are currently operating remotely and do not
+                have a physical office or campus yet. However, we’d be happy to
+                arrange a virtual meeting to discuss our services or answer any
+                questions you may have!
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item animate-on-scroll">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq3"
+              >
+                Do you offer online consultations for international students?
+              </button>
+            </h2>
+            <div
+              id="faq3"
+              class="accordion-collapse collapse"
+              data-bs-parent="#contactFAQ"
+            >
+              <div class="accordion-body">
+                Yes, we offer video consultations for international students.
+                Please mention your country and preferred time zone when
+                submitting your inquiry.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <app-cta></app-cta>
