@@ -1,34 +1,37 @@
-<!-- faq.component.html -->
 <section class="faq-section">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <h1 class="page-title text-center">Frequently Asked Questions</h1>
-          <p class="page-subtitle text-center mb-5">Everything you need to know about our language programs</p>
-          
-          <div class="faq-list">
-            <div 
-              class="faq-item" 
-              *ngFor="let faq of faqs; index as i" 
-              [class.open]="faq.open"
+  <div class="container">
+    <div class="section-title text-center animate-on-scroll">
+      <h2>Frequently Asked Questions</h2>
+      <div class="underline"></div>
+      <p class="page-subtitle mb-5">Everything you need to know about our language programs</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="accordion" id="faqAccordion">
+          <div 
+            class="accordion-item animate-on-scroll" 
+            *ngFor="let faq of faqs; index as i"
+          >
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                [attr.data-bs-target]="'#faq' + faq.id"
+              >
+                {{ faq.question }}
+              </button>
+            </h2>
+            <div
+              [id]="'faq' + faq.id"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
             >
-              <div class="faq-question" (click)="toggle(i)">
-                <p class="mb-0">{{ faq.question }}</p>
-                <span class="icon" [class.rotate]="faq.open">
-                  <i class="bi" [ngClass]="faq.open ? 'bi-dash-circle' : 'bi-plus-circle'"></i>
-                </span>
-              </div>
-              <div class="faq-answer" [@slideInOut]="faq.open ? 'open' : 'closed'">
-                <div class="answer-content" [innerHTML]="faq.answer"></div>
-              </div>
+              <div class="accordion-body" [innerHTML]="faq.answer"></div>
             </div>
-          </div>
-          
-          <div class="mt-5 text-center">
-            <p class="more-questions">Still have questions?</p>
-            <a href="/contact" class="btn btn-primary">Contact Us</a>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>

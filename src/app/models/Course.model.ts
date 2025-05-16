@@ -9,8 +9,8 @@ export interface Course {
   heroImage: string;
   duration: string;
   level: string;
-  groupSize: number;
-  price: number;
+  groupSize?: number;
+  price?: number;
   discount?: number;
   keySkills: Skill[];
   approach: string;
@@ -23,7 +23,7 @@ export interface Course {
 export interface Skill {
   icon: string;
   title: string;
-  description: string;
+  description?: string;
 }
 
 export interface ApproachFeature {
