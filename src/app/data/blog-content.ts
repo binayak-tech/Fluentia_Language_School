@@ -1,12 +1,13 @@
-import { BlogPost } from "../models/Blog.model";
+import { BlogPost } from '../models/Blog.model';
 
 export const BlogPosts: BlogPost[] = [
-    {
-      id: 1,
-      title: 'Mastering English Fluency for Better Career Opportunities',
-      slug: 'mastering-english-fluency-career-opportunities',
-      summary: 'Learn how to leverage advanced English speaking skills to improve your professional prospects and communication abilities in the Indian job market.',
-      content: `p>Speaking fluent English has become a crucial skill for professionals in India, opening doors to better job opportunities and career advancement. Our specialized English fluency program focuses on practical communication skills for the workplace.</p>
+  {
+    id: 1,
+    title: 'Mastering English Fluency for Better Career Opportunities',
+    slug: 'mastering-english-fluency-career-opportunities',
+    summary:
+      'Learn how to leverage advanced English speaking skills to improve your professional prospects and communication abilities in the Indian job market.',
+    content: `<p>Speaking fluent English has become a crucial skill for professionals in India, opening doors to better job opportunities and career advancement. Our specialized English fluency program focuses on practical communication skills for the workplace.</p>
       
       <h2>Why English Fluency Matters</h2>
       <p>In today's competitive Indian job market, proficient English communication offers several advantages:</p>
@@ -33,22 +34,29 @@ export const BlogPosts: BlogPost[] = [
       </ol>
       
       <p>By following our structured approach, you can significantly improve your professional communication skills and confidence, positioning yourself for better opportunities in India's increasingly global workplace environment.</p>`,
-      author: {
-        name: 'Priya Sharma',
-        avatar: '/assets/images/authors/priya.jpg'
-      },
-      publishDate: '2025-03-01',
-      readTime: 5,
-      imageSrc: '/assets/images/blog/english-fluency.jpg',
-      categories: ['English', 'Professional Skills'],
-      tags: ['Business English', 'Career Development', 'Communication Skills', 'Fluency']
+    author: {
+      name: 'Priya Sharma',
+      avatar: '/assets/images/authors/priya.jpg',
     },
-    {
-      id: 2,
-      title: 'Multilingual Advantage: Why Learning Regional Languages Matters in India',
-      slug: 'multilingual-advantage-regional-languages',
-      summary: 'Explore the cultural and professional benefits of learning regional Indian languages alongside English in our increasingly connected nation.',
-      content: `<p>In India's diverse linguistic landscape, being multilingual isn't just culturally enriching—it's increasingly becoming a professional advantage. Let's explore why adding regional language skills to your repertoire can be transformative.</p>
+    publishDate: '2025-03-01',
+    readTime: 5,
+    imageSrc: '/assets/images/blog/english-fluency.jpg',
+    categories: ['English', 'Professional Skills'],
+    tags: [
+      'Business English',
+      'Career Development',
+      'Communication Skills',
+      'Fluency',
+    ],
+  },
+  {
+    id: 2,
+    title:
+      'Multilingual Advantage: Why Learning Regional Languages Matters in India',
+    slug: 'multilingual-advantage-regional-languages',
+    summary:
+      'Explore the cultural and professional benefits of learning regional Indian languages alongside English in our increasingly connected nation.',
+    content: `<p>In India's diverse linguistic landscape, being multilingual isn't just culturally enriching—it's increasingly becoming a professional advantage. Let's explore why adding regional language skills to your repertoire can be transformative.</p>
       
       <h2>Cultural Connection and Understanding</h2>
       <p>Learning languages like Tamil, Bengali, or Marathi opens doors to rich cultural traditions and builds genuine connections across India's diverse regions. This cultural intelligence is invaluable in both personal and professional contexts.</p>
@@ -72,22 +80,27 @@ export const BlogPosts: BlogPost[] = [
       </ul>
       
       <p>By investing in multilingual skills, you position yourself as a versatile professional capable of bridging communication gaps in India's diverse work environment.</p>`,
-      author: {
-        name: 'Rajiv Malhotra',
-        avatar: '/assets/images/authors/rajiv.jpg'
-      },
-      publishDate: '2025-03-15',
-      readTime: 4,
-      imageSrc: '/assets/images/blog/regional-languages.jpg',
-      categories: ['Regional Languages', 'Cultural Skills'],
-      tags: ['Multilingualism', 'Professional Development', 'Cultural Intelligence']
+    author: {
+      name: 'Rajiv Malhotra',
+      avatar: '/assets/images/authors/rajiv.jpg',
     },
-    {
-      id: 3,
-      title: 'Effective German Learning Methods for Indian Students',
-      slug: 'german-learning-methods-indian-students',
-      summary: 'Discover specialized techniques and organizational patterns to master German efficiently as an Indian learner, whether for academic or professional purposes.',
-      content: `<p>Learning German offers exciting opportunities for Indian students and professionals. Our specialized methodology addresses the unique challenges that Indian learners face when studying this important European language.</p>
+    publishDate: '2025-03-15',
+    readTime: 4,
+    imageSrc: '/assets/images/blog/regional-languages.jpg',
+    categories: ['Regional Languages', 'Cultural Skills'],
+    tags: [
+      'Multilingualism',
+      'Professional Development',
+      'Cultural Intelligence',
+    ],
+  },
+  {
+    id: 3,
+    title: 'Effective German Learning Methods for Indian Students',
+    slug: 'german-learning-methods-indian-students',
+    summary:
+      'Discover specialized techniques and organizational patterns to master German efficiently as an Indian learner, whether for academic or professional purposes.',
+    content: `<p>Learning German offers exciting opportunities for Indian students and professionals. Our specialized methodology addresses the unique challenges that Indian learners face when studying this important European language.</p>
       
       <h2>Structured Learning Approach</h2>
       <p>Our German language curriculum is organized into carefully designed modules that build upon each other:</p>
@@ -130,14 +143,19 @@ export const BlogPosts: BlogPost[] = [
       </ul>
       
       <p>With our specialized approach for Indian learners, you can build strong German language skills that open doors to educational opportunities in Germany and enhance your profile in India's growing European business partnerships.</p>`,
-      author: {
-        name: 'Ananya Desai',
-        avatar: '/assets/images/authors/ananya.jpg'
-      },
-      publishDate: '2025-03-28',
-      readTime: 6,
-      imageSrc: '/assets/images/blog/german-language.jpg',
-      categories: ['German', 'International Languages'],
-      tags: ['German Learning', 'Language Certification', 'Study Abroad', 'European Languages']
-    }
-  ];
+    author: {
+      name: 'Ananya Desai',
+      avatar: '/assets/images/authors/ananya.jpg',
+    },
+    publishDate: '2025-03-28',
+    readTime: 6,
+    imageSrc: '/assets/images/blog/german-language.jpg',
+    categories: ['German', 'International Languages'],
+    tags: [
+      'German Learning',
+      'Language Certification',
+      'Study Abroad',
+      'European Languages',
+    ],
+  },
+];

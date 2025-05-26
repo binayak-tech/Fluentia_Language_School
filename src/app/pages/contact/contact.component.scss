@@ -14,10 +14,10 @@ $transition: all 0.3s ease;
 // Hero Section
 .hero-section {
   position: relative;
-  background: $alt-background;
+  background: $background-color-secondary;
   padding: 140px 0 100px;
   overflow: hidden;
-  color: $text-color;
+  color: $text-color-primary;
 
   .hero-content {
     position: relative;
@@ -28,7 +28,7 @@ $transition: all 0.3s ease;
     font-size: 3.2rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
-    color: $dark-color;
+    color: $text-color-heading-primary;
 
     @media (max-width: 991px) {
       font-size: 2.6rem;
@@ -42,7 +42,7 @@ $transition: all 0.3s ease;
   .lead {
     font-size: 1.3rem;
     margin-bottom: 2rem;
-    color: #495057;
+    color: $text-color-primary;
     line-height: 1.6;
 
     @media (max-width: 991px) {
@@ -82,10 +82,10 @@ $transition: all 0.3s ease;
 // Contact Info Section
 .contact-info-section {
   padding: 90px 0;
-  background-color: $background;
+  background-color: $background-color-primary;
 
   .contact-card {
-    background-color: $background;
+    background-color: $background-color-primary;
     border-radius: $border-radius;
     padding: 2.5rem 1.5rem;
     height: 100%;
@@ -101,10 +101,10 @@ $transition: all 0.3s ease;
 
       .icon-wrapper {
         transform: scale(1.1);
-        background-color: $heading-color;
+        background-color: $icon-color-primary;
 
         i {
-          color: white;
+          color: $text-color-light;
         }
       }
     }
@@ -116,7 +116,7 @@ $transition: all 0.3s ease;
       left: 0;
       right: 0;
       height: 3px;
-      background: $heading-color;
+      background: $text-color-heading-primary;
       z-index: 2;
     }
 
@@ -127,13 +127,13 @@ $transition: all 0.3s ease;
       align-items: center;
       justify-content: center;
       margin: 0 auto 1.5rem;
-      background-color: rgba($heading-color, 0.1);
+      background-color: rgba($text-color-heading-primary, 0.1);
       border-radius: 50%;
       transition: $transition;
 
       i {
         font-size: 2rem;
-        color: $heading-color;
+        color: $text-color-heading-primary;
         transition: $transition;
       }
     }
@@ -142,17 +142,17 @@ $transition: all 0.3s ease;
       font-size: 1.5rem;
       margin-bottom: 1rem;
       font-weight: 600;
-      color: $dark-color;
+      color: $text-color-heading-primary;
     }
 
     p {
       margin-bottom: 0.5rem;
-      color: #6c757d;
+      color: $text-color-secondary;
     }
 
     .contact-timing {
       font-size: 0.9rem;
-      color: #868e96;
+      color: $text-color-secondary;
       margin-bottom: 1.5rem;
     }
 
@@ -160,16 +160,16 @@ $transition: all 0.3s ease;
       display: inline-block;
       padding: 0.5rem 1.5rem;
       border-radius: 50px;
-      background-color: rgba($heading-color, 0.1);
-      color: $heading-color;
+      background-color: rgba($text-color-heading-primary, 0.1);
+      color: $text-color-heading-primary;
       font-weight: 500;
       transition: $transition;
       text-decoration: none;
       margin-top: 1rem;
 
       &:hover {
-        background-color: $heading-color;
-        color: white;
+        background-color: $text-color-heading-primary;
+        color: $text-color-light;
       }
     }
   }
@@ -178,11 +178,11 @@ $transition: all 0.3s ease;
 // Form Section
 .form-section {
   padding: 90px 0;
-  background-color: $alt-background;
+  background-color: $background-color-secondary;
 
   .form-container,
   .location-map-container {
-    background: white;
+    background: $background-color-primary;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
     height: 100%;
@@ -199,11 +199,11 @@ $transition: all 0.3s ease;
         font-size: 2rem;
         font-weight: 700;
         margin-bottom: 1rem;
-        color: $dark-color;
+        color: $text-color-heading-primary;
       }
 
       p {
-        color: #6c757d;
+        color: $text-color-secondary;
         margin-bottom: 0;
       }
     }
@@ -216,14 +216,17 @@ $transition: all 0.3s ease;
     > .form-control,
     > .form-select {
       height: calc(3.5rem + 2px);
-      padding: 1rem 0.75rem;
       border: 1px solid #dee2e6;
       border-radius: 8px;
 
       &:focus {
-        box-shadow: 0 0 0 0.25rem rgba($heading-color, 0.25);
-        border-color: rgba($heading-color, 0.5);
+        box-shadow: 0 0 0 0.25rem rgba($text-color-heading-primary, 0.25);
+        border-color: rgba($text-color-heading-primary, 0.5);
       }
+    }
+
+    > .form-select {
+      padding: 1rem 0.75rem;
     }
 
     > label {
@@ -240,18 +243,18 @@ $transition: all 0.3s ease;
       margin-left: -1.8rem;
 
       &:checked {
-        background-color: $heading-color;
-        border-color: $heading-color;
+        background-color: $text-color-heading-primary;
+        border-color: $text-color-heading-primary;
       }
 
       &:focus {
-        box-shadow: 0 0 0 0.25rem rgba($heading-color, 0.25);
-        border-color: rgba($heading-color, 0.5);
+        box-shadow: 0 0 0 0.25rem rgba($text-color-heading-primary, 0.25);
+        border-color: rgba($text-color-heading-primary, 0.5);
       }
     }
 
     a {
-      color: $heading-color;
+      color: $text-color-heading-primary;
       text-decoration: none;
       font-weight: 500;
 
@@ -262,23 +265,16 @@ $transition: all 0.3s ease;
   }
 
   .btn-primary {
-    background-color: $heading-color;
-    border-color: $heading-color;
+    background-color: $text-color-heading-primary;
+    border-color: $text-color-heading-primary;
     padding: 0.8rem 1.5rem;
     font-weight: 600;
     border-radius: 8px;
     transition: $transition;
 
-    &:hover:not(:disabled) {
-      background-color: rgba($heading-color, 0.1);
-      border-color: rgba($heading-color, 0.1);
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba($heading-color, 0.4);
-    }
-
-    &:disabled {
-      background-color: rgba($heading-color, 0.7);
-      border-color: rgba($heading-color, 0.7);
+    &:hover {
+      background-color: $text-color-heading-hover;
+      border-color: $text-color-heading-hover;
     }
   }
 
@@ -291,7 +287,7 @@ $transition: all 0.3s ease;
         font-size: 2rem;
         font-weight: 700;
         margin-bottom: 0;
-        color: $dark-color;
+        color: $text-color-heading-primary;
       }
     }
 
@@ -312,14 +308,14 @@ $transition: all 0.3s ease;
       display: flex;
       align-items: center;
       padding: 1.5rem 2rem;
-      background-color: rgba($heading-color, 0.05);
+      background-color: rgba($text-color-heading-primary, 0.05);
 
       .address-icon {
         width: 48px;
         height: 48px;
         min-width: 48px;
         border-radius: 50%;
-        background-color: $heading-color;
+        background-color: $text-color-heading-primary;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -327,7 +323,7 @@ $transition: all 0.3s ease;
 
         i {
           font-size: 1.5rem;
-          color: white;
+          color: $text-color-light;
         }
       }
 
@@ -336,12 +332,12 @@ $transition: all 0.3s ease;
           font-size: 1.1rem;
           font-weight: 600;
           margin-bottom: 0.2rem;
-          color: $dark-color;
+          color: $text-color-heading-primary;
         }
 
         p {
           margin-bottom: 0;
-          color: #6c757d;
+          color: $text-color-secondary;
           line-height: 1.4;
         }
       }
@@ -354,7 +350,7 @@ $transition: all 0.3s ease;
         font-size: 1.3rem;
         font-weight: 600;
         margin-bottom: 1rem;
-        color: $dark-color;
+        color: $text-color-heading-primary;
       }
 
       .social-icons {
@@ -369,14 +365,14 @@ $transition: all 0.3s ease;
           width: 40px;
           height: 40px;
           border-radius: 50%;
-          background-color: rgba($heading-color, 0.1);
-          color: $heading-color;
+          background-color: rgba($text-color-heading-primary, 0.1);
+          color: $text-color-heading-primary;
           transition: $transition;
           text-decoration: none;
 
           &:hover {
-            background-color: $heading-color;
-            color: white;
+            background-color: $text-color-heading-primary;
+            color: $text-color-light;
             transform: translateY(-3px);
           }
 
@@ -408,7 +404,7 @@ $transition: all 0.3s ease;
 // FAQ Section
 .faq-section {
   padding: 90px 0;
-  background-color: $background;
+  background-color: $background-color-primary;
 
   .accordion {
     margin-top: 2rem;
@@ -425,19 +421,19 @@ $transition: all 0.3s ease;
         .accordion-button {
           padding: 1.25rem 1.5rem;
           font-weight: 600;
-          color: $dark-color;
-          background-color: white;
+          color: $text-color-heading-primary;
+          background-color: $text-color-light;
           box-shadow: none;
           border-radius: $border-radius !important;
 
           &:not(.collapsed) {
-            color: $heading-color;
-            background-color: rgba($heading-color, 0.05);
+            color: $text-color-heading-primary;
+            background-color: rgba($text-color-heading-primary, 0.05);
           }
 
           &:focus {
             box-shadow: none;
-            border-color: rgba($heading-color, 0.5);
+            border-color: rgba($text-color-heading-primary, 0.5);
           }
 
           &::after {
@@ -451,8 +447,8 @@ $transition: all 0.3s ease;
 
       .accordion-body {
         padding: 1.25rem 1.5rem;
-        color: #6c757d;
-        background-color: white;
+        color: $text-color-secondary;
+        background-color: $text-color-light;
       }
     }
   }

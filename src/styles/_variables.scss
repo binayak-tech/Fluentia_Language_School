@@ -1,74 +1,45 @@
-// --- Primary Brand Colors (from logo) ---
-$light-lavender: #d0c4e8; // Lightest purple from logo
-$medium-lavender: #b39ddb; // Mid-tone purple from logo
-$dark-purple-1: #7459a5; // Darker purple from logo
-$dark-purple-2: #7149b9; // Alternative darker purple from logo
+// --------------------------------------------------------------- Core Website Variables --------------------------------------------------------------------------
 
-// --- Core Website Palette ---
-$background: #ffffff; // Primary website background (white for max readability)
-$alt-background: #f6f3fa; // Optional: Very light lavender tint alternative background
+// BACKGROUND COLORS
+$background-color-primary: #ffffff;
+$background-color-secondary: #f6f3fa;
+$background-color-footer: #1a2533;
 
-$text-primary: #333333; // Main body text (dark gray)
-$text-secondary: #555555; // Optional: Slightly lighter text for secondary info
+// TEXT COLORS
+$text-color-primary: #333333;
+$text-color-secondary: #555555;
+$text-color-light: #ffffff;
+$text-color-dark: #000000;
+$text-color-heading-primary: #5d3a9b;
+$text-color-heading-hover: #472c76;
+$text-color-heading-plain: #333333;
+$text-color-success: #28a745;
+$text-color-dark-gray: #343a40;
+$text-color-light-gray: #f8f9fa;
 
-$heading-color: $dark-purple-1; // Headings (H1, H2, etc.)
+// BUTTONS AND ICONS
+$btn-color-primary: #5d3a9b;
+$btn-color-primary-hover: #472c76;
 
-// --- Interactive Elements ---
-$link-color: $medium-lavender; // Standard link color
-$link-hover-color: $dark-purple-1; // Link hover color
-
-$button-primary-bg: $dark-purple-1; // Primary button background
-$button-primary-text: #ffffff; // Primary button text
-$button-primary-hover-bg: $medium-lavender; // Primary button hover background
-
-$button-secondary-bg: #ffffff; // Secondary button background (white/transparent)
-$button-secondary-text: $dark-purple-1; // Secondary button text
-$button-secondary-border: $dark-purple-1; // Secondary button border
-$button-secondary-hover-bg: $alt-background; // Secondary button hover background (very light tint)
-$button-secondary-hover-text: $dark-purple-1; // Secondary button hover text
-
-$button-secondary-alt-bg: $light-lavender;
-$button-secondary-alt-text: $dark-purple-1;
-
-// --- Accents & Borders ---
-$accent-light: $light-lavender; // Light accent color
-$accent-medium: $medium-lavender; // Medium accent color
-$border-light: #e0e0e0; // Subtle border/divider color (light gray)
-$border-brand: $light-lavender; // Brand-colored border
-
-// _variables.scss
-
-$primary-color: #5d3a9b;
-$primary-dark-color: #472c76;
-$secondary-color: #2c3e50;
-$light-color: #ecf0f1;
-$dark-color: #2c3e50;
-
-$font-family-base: "Roboto", sans-serif;
-
-// Bootstrap override variables (optional)
-$body-bg: #ffffff;
-$body-color: $dark-color;
+$icon-color-primary: #5d3a9b;
+$icon-color-primary-hover: #472c76;
 
 // Underlines
 $underline-blue: #3498db;
 $underline-red: #e74c3c;
 
-// text colors
-$text-color: #333333;
-$subtitle-color: #555555;
-$heading-color: #5d3a9b;
-$light-text: #ffffff;
-$dark-text: #000000;
-$light-gray: #f8f9fa;
-$dark-gray: #343a40;
+// Links
+$link-color: #b39ddb;
+$link-hover-color: #7149b9;
+$link-active-color: #7459a5;
 
-// footer background
-$footer-background: #1a2533;
+// SHADOWS AND OVERLAYS
+$shadow-color-primary: rgba(0, 0, 0, 0.6);
+$shadow-blur-primary: 4px;
+$shadow-offset-x-primary: 2px;
+$shadow-offset-y-primary: 2px;
 
-// --- Core Website Palette ---
-$background: #ffffff; // Primary website background (white for max readability)
-$alt-background: #f6f3fa; // Optional: Very light lavender tint alternative background
+$shadow-color-secondary: rgba(0, 0, 0, 0.3);
+$shadow-blur-secondary: 10px;
 
-$text-primary: #333333; // Main body text (dark gray)
-$text-secondary: #555555; // Optional: Slightly lighter text for secondary info
+$overlay-background: rgba(0, 0, 0, 0.5);

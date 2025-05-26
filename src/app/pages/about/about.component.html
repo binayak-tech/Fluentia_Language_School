@@ -1,176 +1,206 @@
 <div class="about-container">
-    <div class="container py-5">
-      <!-- Page Title -->
-      <div class="row mb-5">
-        <div class="col-12 text-center" @fadeIn>
-          <h1 class="display-4 fw-bold">About Fluentia</h1>
-          <div class="title-underline"></div>
-          <p class="lead mt-3">Discover our teaching philosophy, our talented staff, and how we help you succeed</p>
+  <div class="container py-5">
+    <!-- Page Title -->
+    <div class="row mb-5">
+      <div class="col-12 text-center" @fadeIn>
+        <h1 class="about-header">About Fluentia</h1>
+        <div class="title-underline"></div>
+        <p class="about-subtitle">
+          Discover our teaching philosophy, our talented staff, and how we help
+          you succeed
+        </p>
+      </div>
+    </div>
+
+    <!-- Navigation Pills -->
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="about-nav">
+          <ul
+            class="nav nav-pills justify-content-center flex-column flex-md-row"
+            id="about-tabs"
+            role="tablist"
+          >
+            <li
+              class="nav-item"
+              role="presentation"
+              *ngFor="let section of sections"
+            >
+              <button
+                class="nav-link"
+                [class.active]="isActive(section.id)"
+                (click)="setActiveSection(section.id)"
+                type="button"
+              >
+                <i class="fas {{ section.icon }} me-2"></i>{{ section.title }}
+              </button>
+            </li>
+          </ul>
         </div>
       </div>
-  
-      <!-- Navigation Pills -->
-      <div class="row mb-4">
-        <div class="col-12">
-          <div class="about-nav">
-            <ul class="nav nav-pills justify-content-center flex-column flex-md-row" id="about-tabs" role="tablist">
-              <li class="nav-item" role="presentation" *ngFor="let section of sections">
-                <button 
-                  class="nav-link" 
-                  [class.active]="isActive(section.id)"
-                  (click)="setActiveSection(section.id)" 
-                  type="button">
-                  <i class="fas {{section.icon}} me-2"></i>{{section.title}}
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Content Sections -->
-      <div class="row">
-        <div class="col-12">
-          <div class="tab-content" id="about-content">
-            <div *ngFor="let section of sections" 
-                 class="tab-pane fade" 
-                 [class.show]="isActive(section.id)" 
-                 [class.active]="isActive(section.id)" 
-                 @fadeIn>
-              
-              <div class="row align-items-center">
-                <!-- Section Content -->
-                <div class="col-lg-7 order-2 order-lg-1">
-                  <div class="section-content p-4">
-                    <h2 class="section-title">{{section.title}}</h2>
-                    <div class="section-underline mb-4"></div>
-                    <p class="section-text">{{section.content}}</p>
-                    
-                    <!-- Staff Section Extra Content -->
-                    <div *ngIf="section.id === 'staff'" class="staff-highlights mt-4">
-                      <div class="row g-4">
-                        <div class="col-md-4">
-                          <div class="highlight-card text-center">
-                            <div class="highlight-icon">
-                              <i class="fas fa-certificate"></i>
-                            </div>
-                            <h4>Certified</h4>
-                            <p>Internationally recognized qualifications</p>
+    </div>
+
+    <!-- Content Sections -->
+    <div class="row">
+      <div class="col-12">
+        <div class="tab-content" id="about-content">
+          <div
+            *ngFor="let section of sections"
+            class="tab-pane fade"
+            [class.show]="isActive(section.id)"
+            [class.active]="isActive(section.id)"
+            @fadeIn
+          >
+            <div class="row align-items-center">
+              <!-- Section Content -->
+              <div class="col-lg-7 order-2 order-lg-1">
+                <div class="section-content p-4">
+                  <h2 class="section-title">{{ section.title }}</h2>
+                  <div class="section-underline mb-4"></div>
+                  <p class="section-text">{{ section.content }}</p>
+
+                  <!-- Staff Section Extra Content -->
+                  <div
+                    *ngIf="section.id === 'staff'"
+                    class="staff-highlights mt-4"
+                  >
+                    <div class="row g-4">
+                      <div class="col-md-4">
+                        <div class="highlight-card text-center">
+                          <div class="highlight-icon">
+                            <i class="fas fa-certificate"></i>
                           </div>
+                          <h4>Certified</h4>
+                          <p>Internationally recognized qualifications</p>
                         </div>
-                        <div class="col-md-4">
-                          <div class="highlight-card text-center">
-                            <div class="highlight-icon">
-                              <i class="fas fa-globe"></i>
-                            </div>
-                            <h4>Experienced</h4>
-                            <p>Years of teaching across cultures</p>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="highlight-card text-center">
+                          <div class="highlight-icon">
+                            <i class="fas fa-globe"></i>
                           </div>
+                          <h4>Experienced</h4>
+                          <p>Years of teaching across cultures</p>
                         </div>
-                        <div class="col-md-4">
-                          <div class="highlight-card text-center">
-                            <div class="highlight-icon">
-                              <i class="fas fa-comment-dots"></i>
-                            </div>
-                            <h4>Supportive</h4>
-                            <p>Creating confident language learners</p>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="highlight-card text-center">
+                          <div class="highlight-icon">
+                            <i class="fas fa-comment-dots"></i>
                           </div>
+                          <h4>Supportive</h4>
+                          <p>Creating confident language learners</p>
                         </div>
                       </div>
                     </div>
-                    
-                    <!-- Teaching Section Extra Content -->
-                    <div *ngIf="section.id === 'teach'" class="teaching-methods mt-4">
-                      <div class="row g-4">
-                        <div class="col-md-4">
-                          <div class="method-card">
-                            <div class="method-icon">
-                              <i class="fas fa-comments"></i>
-                            </div>
-                            <h5>Communicative</h5>
-                            <p>Natural conversation practice</p>
+                  </div>
+
+                  <!-- Teaching Section Extra Content -->
+                  <div
+                    *ngIf="section.id === 'teach'"
+                    class="teaching-methods mt-4"
+                  >
+                    <div class="row g-4">
+                      <div class="col-md-4">
+                        <div class="method-card">
+                          <div class="method-icon">
+                            <i class="fas fa-comments"></i>
                           </div>
+                          <h5>Communicative</h5>
+                          <p>Natural conversation practice</p>
                         </div>
-                        <div class="col-md-4">
-                          <div class="method-card">
-                            <div class="method-icon">
-                              <i class="fas fa-theater-masks"></i>
-                            </div>
-                            <h5>Interactive</h5>
-                            <p>Role-plays and real scenarios</p>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="method-card">
+                          <div class="method-icon">
+                            <i class="fas fa-theater-masks"></i>
                           </div>
+                          <h5>Interactive</h5>
+                          <p>Role-plays and real scenarios</p>
                         </div>
-                        <div class="col-md-4">
-                          <div class="method-card">
-                            <div class="method-icon">
-                              <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <h5>Practical</h5>
-                            <p>Skills for academic & professional use</p>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="method-card">
+                          <div class="method-icon">
+                            <i class="fas fa-graduation-cap"></i>
                           </div>
+                          <h5>Practical</h5>
+                          <p>Skills for academic & professional use</p>
                         </div>
                       </div>
                     </div>
-                    
-                    <!-- Test Section Extra Content -->
-                    <div *ngIf="section.id === 'test'" class="test-features mt-4">
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="test-process">
-                            <h4>Our Testing Process</h4>
-                            <ul class="process-list">
-                              <li>
-                                <span class="process-number">1</span>
-                                <span class="process-text">Grammar & Vocabulary Assessment</span>
-                              </li>
-                              <li>
-                                <span class="process-number">2</span>
-                                <span class="process-text">Speaking Evaluation</span>
-                              </li>
-                              <li>
-                                <span class="process-number">3</span>
-                                <span class="process-text">Personalized Level Placement</span>
-                              </li>
-                              <li>
-                                <span class="process-number">4</span>
-                                <span class="process-text">Learning Plan Development</span>
-                              </li>
-                            </ul>
-                          </div>
+                  </div>
+
+                  <!-- Test Section Extra Content -->
+                  <div *ngIf="section.id === 'test'" class="test-features mt-4">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="test-process">
+                          <h4>Our Testing Process</h4>
+                          <ul class="process-list">
+                            <li>
+                              <span class="process-number">1</span>
+                              <span class="process-text"
+                                >Grammar & Vocabulary Assessment</span
+                              >
+                            </li>
+                            <li>
+                              <span class="process-number">2</span>
+                              <span class="process-text"
+                                >Speaking Evaluation</span
+                              >
+                            </li>
+                            <li>
+                              <span class="process-number">3</span>
+                              <span class="process-text"
+                                >Personalized Level Placement</span
+                              >
+                            </li>
+                            <li>
+                              <span class="process-number">4</span>
+                              <span class="process-text"
+                                >Learning Plan Development</span
+                              >
+                            </li>
+                          </ul>
                         </div>
-                        <div class="col-md-6">
-                          <div class="test-cta text-center">
-                            <h4>Ready to find your level?</h4>
-                            <p>Take our quick online assessment now</p>
-                            <button class="btn btn-primary btn-lg mt-3">
-                              <i class="fas fa-clipboard-list me-2"></i>Start Level Test
-                            </button>
-                          </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="test-cta text-center">
+                          <h4>Ready to find your level?</h4>
+                          <p>Take our quick online assessment now</p>
+                          <button class="btn btn-primary btn-lg mt-3">
+                            <i class="fas fa-clipboard-list me-2"></i>Start
+                            Level Test
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                
-                <!-- Section Image -->
-                <div class="col-lg-5 order-1 order-lg-2 mb-4 mb-lg-0">
-                  <div class="section-image text-center">
-                    <img 
-                      *ngIf="section.id === 'staff'" 
-                      src="assets/images/about/teachers.jpg" 
-                      alt="Our Professional Teachers" 
-                      class="img-fluid rounded shadow-lg">
-                    <img 
-                      *ngIf="section.id === 'teach'" 
-                      src="assets/images/about/classroom.jpg" 
-                      alt="Our Teaching Method" 
-                      class="img-fluid rounded shadow-lg">
-                    <img 
-                      *ngIf="section.id === 'test'" 
-                      src="assets/images/about/level-test.jpg" 
-                      alt="Language Level Testing" 
-                      class="img-fluid rounded shadow-lg">
-                  </div>
+              </div>
+
+              <!-- Section Image -->
+              <div class="col-lg-5 order-1 order-lg-2 mb-4 mb-lg-0">
+                <div class="section-image text-center">
+                  <img
+                    *ngIf="section.id === 'staff'"
+                    src="assets/images/about/teachers.jpg"
+                    alt="Our Professional Teachers"
+                    class="img-fluid rounded shadow-lg"
+                  />
+                  <img
+                    *ngIf="section.id === 'teach'"
+                    src="assets/images/about/classroom.jpg"
+                    alt="Our Teaching Method"
+                    class="img-fluid rounded shadow-lg"
+                  />
+                  <img
+                    *ngIf="section.id === 'test'"
+                    src="assets/images/about/level-test.jpg"
+                    alt="Language Level Testing"
+                    class="img-fluid rounded shadow-lg"
+                  />
                 </div>
               </div>
             </div>
@@ -179,3 +209,4 @@
       </div>
     </div>
   </div>
+</div>

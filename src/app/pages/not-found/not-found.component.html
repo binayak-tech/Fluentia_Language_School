@@ -1,11 +1,23 @@
-<div class="not-found-page">
-    <div class="container">
-      <h1 class="error-code">404</h1>
-      <h2 class="error-message">Page Not Found</h2>
-      <p class="error-description">
-        Oops! The page you're looking for doesn't exist or has been moved.
+<div
+  class="not-found-container d-flex flex-column justify-content-center align-items-center vh-100 text-center"
+>
+  <div class="container">
+    <h1 class="display-1 text-heading-primary mb-3">404</h1>
+    <h2 class="text-color-dark mb-4">Page Not Found</h2>
+    <p class="lead text-color-secondary mb-5">
+      Oops! It looks like you've ventured into uncharted territory.
+      <br />The page you're looking for doesn't exist or has been moved.
+    </p>
+    <a routerLink="/" class="btn btn-primary btn-lg">
+      <i class="fas fa-home me-2"></i> Go to Homepage
+    </a>
+    <div class="mt-4">
+      <p class="text-color-secondary">
+        If you believe this is an error, please
+        <a href="mailto:bpurohit.dev@gmail.com" class="link-color"
+          >contact support</a
+        >.
       </p>
-      <a routerLink="/" class="home-button">Go Back Home</a>
     </div>
   </div>
-  
+</div>

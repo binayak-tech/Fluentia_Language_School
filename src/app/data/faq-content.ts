@@ -1,109 +1,123 @@
-import { Faq } from "../models/Faq.model";
+import { Faq } from '../models/Faq.model';
 
 export const Faqs: Faq[] = [
   {
     id: 1,
     question: 'What languages do you offer?',
-    answer: 'We offer courses in French, German, Japanese, Korean, Spanish, Arabic, and Mandarin.',
+    answer:
+      'We offer English (Spoken English, Interview Preparation, IELTS) and foreign languages including French, Spanish, German, Mandarin, Korean, Japanese, and Arabic.',
     open: false,
-    category: 'general'
+    category: 'general',
   },
   {
     id: 2,
     question: 'Are your lessons online or in-person?',
-    answer: 'We offer both online and in-person lessons, depending on your location and preference.',
+    answer:
+      'All our lessons are conducted online through live interactive classes, giving you the flexibility to learn from anywhere.',
     open: false,
-    category: 'general'
+    category: 'general',
   },
   {
     id: 3,
     question: 'Can I schedule a trial class?',
-    answer: 'Yes, you can schedule a free trial lesson through our homepage CTA or contact page.',
+    answer:
+      'Absolutely! You can book a free demo class to experience our teaching style and interact with your potential trainer.',
     open: false,
-    category: 'enrollment'
+    category: 'general',
   },
   {
     id: 4,
-    question: 'What is the average duration to achieve fluency?',
-    answer: 'On average, students become fluent in 12–18 months with regular practice and structured learning.',
+    question: 'Do you provide certification upon completion?',
+    answer:
+      'Yes, we provide an official course completion certificate at the end of every foreign language course.',
     open: false,
-    category: 'learning'
+    category: 'certification',
   },
   {
     id: 5,
-    question: 'Do you provide certification upon completion?',
-    answer: 'Yes, students receive a certificate upon successful completion of their language level.',
+    question: 'What is the class size for group lessons?',
+    answer:
+      'We maintain a small batch size (4-6 students) to ensure personalized attention. One-on-one classes are also available.',
     open: false,
-    category: 'general'
+    category: 'class details',
   },
   {
     id: 6,
-    question: 'Are your instructors native speakers?',
-    answer: 'Yes, most of our instructors are native speakers or highly proficient bilingual teachers.',
+    question: 'What if I miss a class?',
+    answer:
+      'We offer recorded sessions or rescheduled classes to ensure you never miss out on learning.',
     open: false,
-    category: 'instructors'
+    category: 'class details',
   },
   {
     id: 7,
-    question: 'What is the class size for group lessons?',
-    answer: 'We keep class sizes small—usually between 4 to 8 students—to ensure personal attention.',
+    question: 'Is there an age limit for joining classes?',
+    answer:
+      'There’s no age limit! We welcome learners of all ages—whether you’re a student, working professional, or retiree.',
     open: false,
-    category: 'classes'
+    category: 'general',
   },
   {
     id: 8,
-    question: 'What if I miss a class?',
-    answer: 'Missed classes can be made up via recordings or by joining another live session if available.',
+    question: 'Do you offer any discounts or scholarships?',
+    answer:
+      'We offer seasonal discounts, referral rewards, and custom pricing for group enrollments. Contact our team to learn more about current offers.',
     open: false,
-    category: 'schedule'
+    category: 'pricing',
   },
   {
     id: 9,
-    question: 'Do you offer corporate training programs?',
-    answer: 'Yes, we provide customized language programs for corporate teams and organizations.',
+    question: 'Can I learn two languages at the same time?',
+    answer:
+      'Yes, you can enroll in two courses simultaneously. However, we recommend evaluating your availability to maintain consistency and avoid burnout.',
     open: false,
-    category: 'corporate'
+    category: 'general',
   },
   {
     id: 10,
-    question: 'Is there an age limit for joining classes?',
-    answer: 'We offer programs for all age groups—kids (6+), teens, adults, and senior learners.',
+    question: 'Are the classes flexible for working professionals?',
+    answer:
+      'Yes, we offer morning, evening, and weekend batches to suit your work schedule. You can also opt for one-to-one sessions with custom timing.',
     open: false,
-    category: 'general'
+    category: 'class details',
   },
   {
     id: 11,
-    question: 'Do you offer any discounts or scholarships?',
-    answer: 'We occasionally offer seasonal discounts and have merit-based scholarships available.',
+    question: 'What is the duration of each class?',
+    answer: 'Each session typically lasts 60-90 minutes.',
     open: false,
-    category: 'pricing'
+    category: 'class details',
   },
   {
     id: 12,
-    question: 'Can I switch to another language after enrolling?',
-    answer: 'Yes, you can switch if seats are available and the switch is made within the first week.',
+    question: 'Can I change my batch timing after joining?',
+    answer:
+      'Yes, you can switch to another batch subject to availability and trainer approval.',
     open: false,
-    category: 'enrollment'
+    category: 'class details',
   },
   {
     id: 13,
-    question: 'How do I track my progress?',
-    answer: 'Our platform includes assessments, progress reports, and one-on-one feedback from instructors.',
+    question: 'Do you prepare students for both Academic and General IELTS?',
+    answer:
+      'Yes, we offer preparation for both Academic and General Training modules.',
     open: false,
-    category: 'learning'
+    category: 'exam preparation',
   },
   {
     id: 14,
     question: 'What platform do you use for online classes?',
-    answer: 'We primarily use Zoom, integrated with our own LMS for assignments and materials.',
+    answer:
+      'We use Zoom or Google Meet for online classes, depending on the course.',
     open: false,
-    category: 'technical'
+    category: 'general',
   },
   {
     id: 15,
-    question: 'Do you offer language proficiency tests like DELF or JLPT prep?',
-    answer: 'Yes, we have specialized courses for DELF, JLPT, TOPIK, and other international exams.',
+    question:
+      'Do you prepare for international exams like DELF, Goethe, DELE, JLPT, TOPIK?',
+    answer: 'Yes, our curriculum aligns with international exams.',
     open: false,
-    category: 'exam-prep'
-  }
+    category: 'exam preparation',
+  },
 ];

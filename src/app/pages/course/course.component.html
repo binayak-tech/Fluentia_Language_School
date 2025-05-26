@@ -1,8 +1,4 @@
-<div
-  class="course-page"
-  *ngIf="courseData"
-  [ngStyle]="{ '--course-color': courseData.color }"
->
+<div class="course-page" *ngIf="courseData">
   <!-- Loading Spinner -->
   <div class="loading-container" *ngIf="loading">
     <div class="spinner-border text-primary" role="status">
@@ -29,7 +25,10 @@
             </div>
           </div>
           <div class="hero-buttons">
-            <button class="btn btn-primary me-3">
+            <button
+              class="btn btn-primary me-3"
+              (click)="scrollToSection('contact')"
+            >
               <i class="fas fa-calendar-check me-2"></i>Book Free Trial
             </button>
           </div>
@@ -73,7 +72,7 @@
               <i class="fas {{ skill.icon }}"></i>
             </div>
             <h3 class="learning-title">{{ skill.title }}</h3>
-            <!-- <p class="learning-description">{{ skill.description }}</p> -->
+            <p class="learning-description">{{ skill.description }}</p>
           </div>
         </div>
       </div>
@@ -199,7 +198,7 @@
   </section>
 
   <!-- CTA Section (Imported Component) -->
-  <app-cta></app-cta>
+  <app-cta id="contact"></app-cta>
 </div>
 
 <!-- Fallback if courseData is not found -->

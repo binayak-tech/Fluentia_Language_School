@@ -5,7 +5,6 @@ export interface Course {
   name: string;
   title: string;
   description: string;
-  color: string;
   heroImage: string;
   duration: string;
   level: string;

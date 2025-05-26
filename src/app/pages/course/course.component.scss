@@ -2,17 +2,8 @@
 @use "../../../styles/utilities" as *;
 
 :host {
-  --course-color: #3e64ff;
-  --course-light: rgba(62, 100, 255, 0.1);
-  --text-color: #333;
-  --text-light: #767676;
-  --bg-light: #f8f9fa;
-  --border-radius: 12px;
-  --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  --transition: all 0.3s ease;
-
+  // Using consistent color theme instead of dynamic --course-color
   display: block;
-  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
 }
 
 // Loading Styles
@@ -29,16 +20,16 @@
   padding: 120px 0 160px;
   background: linear-gradient(
     135deg,
-    var(--course-color) 0%,
-    rgba(62, 100, 255, 0.7) 100%
+    $btn-color-primary 0%,
+    rgba($btn-color-primary, 0.7) 100%
   );
-  color: white;
+  color: $text-color-light;
   overflow: hidden;
 
   .course-badge {
     display: inline-block;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
+    background-color: rgba($text-color-light, 0.2);
+    color: $text-color-light;
     padding: 6px 16px;
     border-radius: 50px;
     font-weight: 600;
@@ -73,7 +64,7 @@
     .feature {
       display: flex;
       align-items: center;
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: rgba($text-color-light, 0.1);
       border-radius: 50px;
       padding: 8px 16px;
       backdrop-filter: blur(4px);
@@ -100,28 +91,28 @@
       padding: 0.75rem 1.75rem;
       font-weight: 600;
       border-radius: 50px;
-      transition: var(--transition);
+      transition: all 0.3s ease;
 
       &.btn-primary {
-        background-color: white;
-        color: var(--course-color);
+        background-color: $text-color-light;
+        color: $btn-color-primary;
         border: none;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 15px $shadow-color-secondary;
 
         &:hover {
-          background-color: rgba(255, 255, 255, 0.9);
+          background-color: rgba($text-color-light, 0.9);
           transform: translateY(-3px);
-          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 8px 25px $shadow-color-secondary;
         }
       }
 
       &.btn-outline-primary {
         background-color: transparent;
-        color: white;
-        border: 2px solid white;
+        color: $text-color-light;
+        border: 2px solid $text-color-light;
 
         &:hover {
-          background-color: rgba(255, 255, 255, 0.1);
+          background-color: rgba($text-color-light, 0.1);
           transform: translateY(-3px);
         }
       }
@@ -135,10 +126,10 @@
     opacity: 0;
 
     img {
-      border-radius: var(--border-radius);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      box-shadow: 0 15px 35px $shadow-color-secondary;
       transform: perspective(1000px) rotateY(-5deg);
-      transition: var(--transition);
+      transition: all 0.3s ease;
 
       &:hover {
         transform: perspective(1000px) rotateY(0);
@@ -179,7 +170,7 @@ section {
     font-weight: 700;
     margin-bottom: 1rem;
     font-size: 2.25rem;
-    color: var(--text-color);
+    color: $text-color-primary;
     text-align: center;
 
     @media (max-width: 768px) {
@@ -192,8 +183,8 @@ section {
     height: 4px;
     background: linear-gradient(
       90deg,
-      var(--course-color),
-      color-mix(in srgb, var(--course-color), black 15%)
+      $btn-color-primary,
+      $btn-color-primary-hover
     );
     margin: 0 auto 1.75rem;
     border-radius: 4px;
@@ -206,7 +197,7 @@ section {
 
   .lead {
     font-size: 1.1rem;
-    color: var(--text-light);
+    color: $text-color-secondary;
     max-width: 700px;
     margin: 0 auto;
   }
@@ -214,24 +205,24 @@ section {
 
 // Learning Section
 .learning-section {
-  background-color: $background;
+  background-color: $background-color-primary;
 
   .learning-card {
-    background-color: white;
+    background-color: $background-color-primary;
     padding: 30px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px $shadow-color-secondary;
     height: 100%;
-    transition: var(--transition);
+    transition: all 0.3s ease;
     text-align: center;
 
     &:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 15px 35px $shadow-color-secondary;
 
       .learning-icon {
-        background-color: var(--course-color);
-        color: white;
+        background-color: $btn-color-primary;
+        color: $text-color-light;
       }
     }
 
@@ -239,13 +230,13 @@ section {
       width: 70px;
       height: 70px;
       border-radius: 50%;
-      background-color: var(--course-light);
-      color: var(--course-color);
+      background-color: rgba($btn-color-primary, 0.1);
+      color: $btn-color-primary;
       display: flex;
       align-items: center;
       justify-content: center;
       margin: 0 auto 20px;
-      transition: var(--transition);
+      transition: all 0.3s ease;
 
       i {
         font-size: 24px;
@@ -256,10 +247,11 @@ section {
       font-size: 1.25rem;
       font-weight: 600;
       margin-bottom: 12px;
+      color: $text-color-primary;
     }
 
     .learning-description {
-      color: var(--text-light);
+      color: $text-color-secondary;
       font-size: 0.95rem;
       margin-bottom: 0;
     }
@@ -268,12 +260,13 @@ section {
 
 // Approach Section
 .approach-section {
-  background-color: $alt-background;
+  background-color: $background-color-secondary;
+
   .approach-image {
     img {
-      border-radius: var(--border-radius);
-      box-shadow: var(--card-shadow);
-      transition: var(--transition);
+      border-radius: 12px;
+      box-shadow: 0 8px 30px $shadow-color-secondary;
+      transition: all 0.3s ease;
 
       &:hover {
         transform: scale(1.02);
@@ -282,7 +275,7 @@ section {
   }
 
   .approach-text {
-    color: var(--text-light);
+    color: $text-color-secondary;
     margin-bottom: 2rem;
     font-size: 1.05rem;
   }
@@ -294,23 +287,23 @@ section {
 
     .feature {
       display: flex;
-      background-color: white;
-      border-radius: var(--border-radius);
+      background-color: $background-color-primary;
+      border-radius: 12px;
       padding: 20px;
-      box-shadow: var(--card-shadow);
-      transition: var(--transition);
+      box-shadow: 0 8px 30px $shadow-color-secondary;
+      transition: all 0.3s ease;
 
       &:hover {
         transform: translateX(10px);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 8px 25px $shadow-color-secondary;
       }
 
       i {
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        background-color: var(--course-light);
-        color: var(--course-color);
+        background-color: rgba($btn-color-primary, 0.1);
+        color: $btn-color-primary;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -324,10 +317,11 @@ section {
           font-weight: 600;
           font-size: 1.1rem;
           margin-bottom: 8px;
+          color: $text-color-primary;
         }
 
         p {
-          color: var(--text-light);
+          color: $text-color-secondary;
           margin-bottom: 0;
           font-size: 0.95rem;
         }
@@ -339,19 +333,19 @@ section {
 // Course Modules Section Styles
 .modules-section {
   padding: 5rem 0;
-  background-color: $background;
+  background-color: $background-color-primary;
 
   .module-card {
-    background-color: $background;
+    background-color: $background-color-primary;
     border-radius: 12px;
     overflow: hidden;
     height: 100%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 15px $shadow-color-secondary;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 20px $shadow-color-secondary;
     }
 
     .module-illustration {
@@ -373,8 +367,8 @@ section {
         padding: 0.3rem 0.8rem;
         font-size: 0.8rem;
         font-weight: 600;
-        color: #fff;
-        background-color: var(--course-color);
+        color: $text-color-light;
+        background-color: $btn-color-primary;
         border-radius: 20px;
         margin-bottom: 0.8rem;
       }
@@ -383,7 +377,7 @@ section {
         font-size: 1.2rem;
         font-weight: 600;
         margin-bottom: 1rem;
-        color: #333;
+        color: $text-color-primary;
       }
 
       .module-topics {
@@ -397,9 +391,10 @@ section {
           align-items: flex-start;
           line-height: 1.4;
           font-size: 0.95rem;
+          color: $text-color-primary;
 
           i {
-            color: var(--course-color);
+            color: $btn-color-primary;
             margin-right: 0.8rem;
             margin-top: 0.2rem;
             font-size: 0.9rem;
@@ -412,20 +407,20 @@ section {
 
 // Success Stories Section
 .success-section {
-  background-color: $alt-background;
+  background-color: $background-color-secondary;
 
   .success-card {
-    background-color: $background;
+    background-color: $background-color-primary;
     padding: 30px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px $shadow-color-secondary;
     height: 100%;
-    transition: var(--transition);
+    transition: all 0.3s ease;
     position: relative;
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 15px 35px $shadow-color-secondary;
     }
 
     .success-achievement {
@@ -433,8 +428,8 @@ section {
 
       .achievement-badge {
         display: inline-block;
-        background-color: var(--course-light);
-        color: var(--course-color);
+        background-color: rgba($btn-color-primary, 0.1);
+        color: $btn-color-primary;
         padding: 6px 16px;
         border-radius: 50px;
         font-weight: 600;
@@ -443,14 +438,14 @@ section {
     }
 
     .quote-icon {
-      color: var(--course-color);
+      color: $btn-color-primary;
       opacity: 0.2;
       font-size: 24px;
       margin-bottom: 15px;
     }
 
     p {
-      color: var(--text-light);
+      color: $text-color-secondary;
       font-style: italic;
       margin-bottom: 20px;
     }
@@ -465,7 +460,7 @@ section {
         border-radius: 50%;
         object-fit: cover;
         margin-right: 15px;
-        border: 2px solid var(--course-light);
+        border: 2px solid rgba($btn-color-primary, 0.1);
       }
 
       .author-info {
@@ -474,11 +469,12 @@ section {
 
         .author-name {
           font-weight: 600;
+          color: $text-color-primary;
         }
 
         .author-title {
           font-size: 0.85rem;
-          color: var(--text-light);
+          color: $text-color-secondary;
         }
       }
     }

@@ -1,106 +1,110 @@
-@use '../../../../styles/variables' as *;
-@use '../../../../styles/utilities' as *;
-@use 'sass:color';
+@use "../../../../styles/variables" as *;
+@use "../../../../styles/utilities" as *;
+@use "sass:color";
 
 .footer {
-    background: linear-gradient(135deg, $footer-background, color.adjust($footer-background, $lightness: -20%));
-    color: $light-gray;
-    padding: 60px 0 30px;
-    margin-top: 40px;
-    
-    .footer-column {
-      margin-bottom: 30px;
-      
-      h3 {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-        position: relative;
-        padding-bottom: 10px;
-        
-        &::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          width: 50px;
-          height: 3px;
-          background-color: $dark-purple-1;
-        }
-      }
-    }
-    
-    .footer-links {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      
-      li {
-        margin-bottom: 10px;
-        
-        a {
-          color: $light-color;
-          text-decoration: none;
-          transition: color 0.3s ease;
-          
-          &:hover {
-            color: $dark-purple-1;
-          }
-        }
-      }
-    }
-    
-    .social-icons {
-      display: flex;
-      gap: 10px;
-      margin-top: 20px;
-      
-      .social-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.1);
-        color: white;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        
-        &:hover {
-          background-color: $dark-purple-1;
-          transform: translateY(-3px);
-        }
-        
-        i {
-          font-size: 1.2rem;
-        }
-      }
-    }
-    
-    .newsletter {
-      background-color: rgba(255, 255, 255, 0.05);
-      padding: 20px;
-      border-radius: 5px;
-      
-      h4 {
-        margin-bottom: 15px;
-      }
-      
-      .btn-primary {
-        background-color: $dark-purple-1;
-        border-color: $dark-purple-1;
-      }
-    }
+  background: linear-gradient(
+    135deg,
+    $background-color-footer,
+    color.adjust($background-color-footer, $lightness: -20%)
+  );
+  color: $text-color-light-gray;
+  padding: 60px 0 30px;
+  margin-top: 40px;
 
-    .language-badges{
-      .badge{
-        background-color: $dark-purple-1;
-        color: $light-gray;
+  .footer-column {
+    margin-bottom: 30px;
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 3px;
+        background-color: $btn-color-primary;
       }
-    }
-    
-    .copyright {
-      font-size: 0.9rem;
-      opacity: 0.7;
     }
   }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 10px;
+
+      a {
+        color: $text-color-light;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $btn-color-primary;
+        }
+      }
+    }
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: $text-color-light;
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: $btn-color-primary;
+        transform: translateY(-3px);
+      }
+
+      i {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .newsletter {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 5px;
+
+    h4 {
+      margin-bottom: 15px;
+    }
+
+    .btn-primary {
+      background-color: $btn-color-primary;
+      border-color: $btn-color-primary;
+    }
+  }
+
+  .language-badges {
+    .badge {
+      background-color: $btn-color-primary;
+      color: $text-color-light-gray;
+    }
+  }
+
+  .copyright {
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+}

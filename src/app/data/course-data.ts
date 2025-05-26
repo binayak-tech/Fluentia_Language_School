@@ -6,33 +6,35 @@ export const COURSE_DATA: Course[] = [
     slug: 'spoken-english',
     type: 'Language Course',
     name: 'Spoken English',
-    title:
-      'Speak English Fluently with Confidence!',
-    description: 'Master general spoken English, grammar, and real-life communication with expert trainers.',
-    color: '#4CAF50',
+    title: 'Speak English Fluently with Confidence!',
+    description:
+      'Master general spoken English, grammar, and real-life communication with expert trainers.',
     heroImage: '/assets/images/courses/spoken-english.jpg',
     duration: '40 Hours',
     level: 'Beginner | Intermediate | Advanced',
     keySkills: [
       {
         icon: 'fa-comments',
-        title: 'Speak Confidently in Real-Life Situations',
+        title: 'Speak Confidently',
+        description: 'Handle real-life conversations with ease and clarity.',
       },
       {
         icon: 'fa-book',
-        title: 'Build Strong Vocabulary & Grammar',
+        title: 'Boost Vocabulary & Grammar',
+        description: 'Learn useful words and correct sentence structures.',
       },
       {
-        icon: 'fa-users',
-        title: 'Improve Fluency & Pronunciation',
+        icon: 'fa-microphone',
+        title: 'Fluency & Pronunciation',
+        description: 'Speak smoothly and sound more natural.',
       },
       {
         icon: 'fa-lightbulb',
-        title: 'Express Ideas, Emotions & Opinions Clearly',
+        title: 'Express Yourself Clearly',
+        description: 'Share your thoughts, emotions, and ideas confidently.',
       },
     ],
-    approach:
-      `Our approach blends practical communication, real-life scenarios, 
+    approach: `Our approach blends practical communication, real-life scenarios, 
       and interactive learning to help you overcome hesitation and build natural fluency. 
       With engaging activities like role-plays, debates, and storytelling, you’ll learn not just grammar 
       but the art of confeaking. Our expert trainers ident sppersonalize the learning experience, ensuring you develop clarity, pronunciation, 
@@ -71,7 +73,7 @@ export const COURSE_DATA: Course[] = [
         topics: [
           'Sentence building basics',
           'Everyday vocabulary',
-          'Basic grammar essentials'
+          'Basic grammar essentials',
         ],
       },
       {
@@ -80,7 +82,7 @@ export const COURSE_DATA: Course[] = [
         topics: [
           'Speaking in real-life situations (shopping, travel, greetings, etc.)',
           'Asking and answering questions',
-          'Expressing opinions, likes, and dislikes'
+          'Expressing opinions, likes, and dislikes',
         ],
       },
       {
@@ -89,7 +91,7 @@ export const COURSE_DATA: Course[] = [
         topics: [
           'Role-plays and storytelling',
           'Group discussions',
-          'Pronunciation and accent practice'
+          'Pronunciation and accent practice',
         ],
       },
     ],
@@ -118,31 +120,35 @@ export const COURSE_DATA: Course[] = [
     type: 'Exam Preparation',
     name: 'IELTS Preparation',
     title: 'Crack the IELTS with Confidence!',
-    description: 'Master all four IELTS skills with powerful strategies, fluency coaching & mock tests by certified experts.',
-    color: '#2196F3',
+    description:
+      'Master all four IELTS skills with powerful strategies, fluency coaching & mock tests by certified experts.',
     heroImage: '/assets/images/courses/ielts.jpg',
     duration: '8 Weeks (60 Hours)',
     level: 'Mock Tests + Detailed Feedback',
     keySkills: [
       {
-        icon: 'fa-listening',
-        title: 'Master Speaking, Listening, Reading & Writing strategies',
+        icon: 'fa-graduation-cap',
+        title: 'Master All Skills',
+        description:
+          'Learn effective strategies for Speaking, Listening, Reading & Writing.',
       },
       {
-        icon: 'fa-book-open',
-        title: 'Improve Grammar, Vocabulary & Fluency',
+        icon: 'fa-bullseye',
+        title: 'Boost Accuracy',
+        description: 'Strengthen your grammar, vocabulary, and fluency.',
       },
       {
         icon: 'fa-clock',
-        title: 'Learn Time Management & Answer Structuring',
+        title: 'Manage Time Well',
+        description: 'Structure answers and complete tasks within time.',
       },
       {
-        icon: 'fa-comments',
-        title: 'Practice with Real IELTS Questions & Mock Tests',
+        icon: 'fa-check-circle',
+        title: 'Practice Smart',
+        description: 'Solve real IELTS questions with mock tests.',
       },
     ],
-    approach:
-    `Our highly experienced trainers understand the IELTS exam inside out, equipping you with powerful strategies for all 
+    approach: `Our highly experienced trainers understand the IELTS exam inside out, equipping you with powerful strategies for all 
     four modules—Listening, Reading, Writing, and Speaking. Through interactive sessions, real exam simulations, and personalized 
     feedback, we ensure you master essential skills and build confidence. Our structured program guarantees effective learning,
     time management techniques, and test-taking strategies to maximize your potential. With tailored coaching and continuous assessment,
@@ -199,27 +205,27 @@ export const COURSE_DATA: Course[] = [
         topics: [
           'Task 1: Reports & Graphs (Academic) or Letters (General)',
           'Task 2: Essay types & structure',
-          'Vocabulary, coherence & grammar improvement'
+          'Vocabulary, coherence & grammar improvement',
         ],
       },
       {
-        title: "IELTS Reading & Listening",
-        illustration: "/assets/images/courses/ielts-module-4.jpg",
+        title: 'IELTS Reading & Listening',
+        illustration: '/assets/images/courses/ielts-module-4.jpg',
         topics: [
-          "Skimming, scanning & question types",
-          "Practice with Cambridge-style tests",
-          "Accents, tone & audio strategy"
-        ]
+          'Skimming, scanning & question types',
+          'Practice with Cambridge-style tests',
+          'Accents, tone & audio strategy',
+        ],
       },
       {
-        title: "Mock Tests & Feedback",
-        illustration: "/assets/images/courses/ielts-module-5.jpg",
+        title: 'Mock Tests & Feedback',
+        illustration: '/assets/images/courses/ielts-module-5.jpg',
         topics: [
-          "Full-length Mock Tests",
-          "Band-wise evaluation",
-          "Personalised score analysis & tips"
-        ]
-      }
+          'Full-length Mock Tests',
+          'Band-wise evaluation',
+          'Personalised score analysis & tips',
+        ],
+      },
     ],
     successStories: [
       {
@@ -247,30 +253,32 @@ export const COURSE_DATA: Course[] = [
     name: 'Interview Preparation',
     title: 'Crack Your Job Interviews with Confidence!',
     description: `Master spoken English, body language & mock interviews with expert trainers.`,
-    color: '#FF9800',
     heroImage: '/assets/images/courses/interview-prep.jpg',
     duration: '40 Hours',
     level: 'Beginner | Intermediate | Advanced',
     keySkills: [
       {
-        icon: 'fa-user-check',
-        title: 'Answer common interview questions with confidence',
-      },
-      {
-        icon: 'fa-lightbulb',
-        title: 'Speak clearly about your strengths, goals & experiences',
-      },
-      {
         icon: 'fa-comments',
-        title: 'Build fluency, vocabulary & professional tone',
+        title: 'Confident Answers',
+        description: 'Respond to common interview questions with clarity.',
       },
       {
-        icon: 'fa-bullseye',
-        title: 'Frame smart, impressive answers that stand out',
+        icon: 'fa-user-tie',
+        title: 'Speak About Yourself',
+        description: 'Share your goals, strengths, and experience clearly.',
+      },
+      {
+        icon: 'fa-briefcase',
+        title: 'Professional Communication',
+        description: 'Build fluency, strong vocabulary, and a formal tone.',
+      },
+      {
+        icon: 'fa-star',
+        title: 'Standout Responses',
+        description: 'Frame smart, impactful answers that get noticed.',
       },
     ],
-    approach:
-    `At Fluentia Language School, we combine expert coaching, real mock interviews, and personalized feedback to help you succeed in job interviews.
+    approach: `At Fluentia Language School, we combine expert coaching, real mock interviews, and personalized feedback to help you succeed in job interviews.
     Our sessions focus on building fluency, body language, clarity, and confidence through interactive techniques like role-plays, mock interviews, personalized corrections, and real-time feedback.
     We help you overcome nervousness, structure answers smartly, and speak with impact — even in high-pressure interview settings`,
     approachImage: '/assets/images/courses/interview-prep-approach.jpg',
