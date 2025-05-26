@@ -1,9 +1,8 @@
 import { Routes } from '@angular/router';
 import { BlogListingComponent } from './pages/blog-listing/blog-listing.component';
 import { BlogViewComponent } from './pages/blog-view/blog-view.component';
-import { LanguagePageComponent } from './pages/languages/language-page/language-page.component';
+import { LanguagePageComponent } from './pages/language-page/language-page.component';
 import { CourseComponent } from './pages/course/course.component';
-import { CoursePageComponent } from './pages/course-page/course-page.component';
 
 export const routes: Routes = [
   {
@@ -39,6 +38,11 @@ export const routes: Routes = [
       import('./pages/sample-sessions/sample-sessions.component').then(
         (m) => m.SampleSessionsComponent
       ),
+  },
+  {
+    path: 'languages/english',
+    redirectTo: '/english/spoken-english',
+    pathMatch: 'full',
   },
   {
     path: 'languages/:language',

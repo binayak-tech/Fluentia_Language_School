@@ -1,97 +1,103 @@
-@use 'sass:color';
-@use '../../../styles/variables' as *;
-@use '../../../styles/utilities' as *;
+@use "sass:color";
+@use "../../../styles/variables" as *;
+@use "../../../styles/utilities" as *;
 
 .about-container {
-  background-color: $background;
+  background-color: $background-color-secondary;
   min-height: 80vh;
-  
+
+  .about-header {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $text-color-heading-primary;
+  }
+  .about-subtitle {
+    font-size: 1.2rem;
+    color: $text-color-secondary;
+    margin-bottom: 1.5rem;
+  }
   .title-underline {
     @include underline-style-blue;
   }
-  
+
   .section-underline {
     @include underline-style-red;
     margin: 0;
   }
-  
+
   // Navigation Pills
   .about-nav {
     .nav-pills {
-      background-color: $background;
-      border-radius: 50px;
+      background-color: $background-color-primary;
+      border-radius: 15px;
       padding: 8px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       margin-bottom: 2rem;
-      
+
       .nav-link {
         border-radius: 50px;
         padding: 12px 25px;
         margin: 0 5px;
-        color: $dark-gray;
+        color: $text-color-dark-gray;
         font-weight: 600;
         transition: all 0.3s ease;
-        
+
         &:hover {
-          background-color: rgba($dark-purple-1, 0.1);
-          color: $dark-purple-1;
+          background-color: rgba($btn-color-primary-hover, 0.1);
+          color: $btn-color-primary-hover;
         }
-        
+
         &.active {
-            background: linear-gradient(to right, $dark-purple-1, color.adjust($dark-purple-1, $lightness: 10%));
-            box-shadow: 0 5px 15px rgba($dark-purple-1, 0.3);
-            color: $light-gray;
+          background: linear-gradient(
+            to right,
+            $btn-color-primary-hover,
+            color.adjust($btn-color-primary-hover, $lightness: 10%)
+          );
+          box-shadow: 0 5px 15px rgba($btn-color-primary-hover, 0.3);
+          color: $text-color-light-gray;
         }
-        
+
         i {
           font-size: 1.1rem;
         }
       }
-      
-      @media (max-width: 767px) {
-        .nav-link {
-          margin: 5px;
-          text-align: left;
-          border-radius: 8px;
-        }
-      }
     }
   }
-  
+
   // Content Sections
   .tab-content {
     .tab-pane {
-      background-color: $background;
+      background-color: $background-color-primary;
       border-radius: 15px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
       overflow: hidden;
-      
+
       .section-content {
         padding: 2rem;
-        
+
         .section-title {
           font-size: 2rem;
           font-weight: 700;
-          color: $dark-gray;
+          color: $text-color-dark-gray;
           margin-bottom: 1rem;
         }
-        
+
         .section-text {
           font-size: 1.1rem;
           line-height: 1.8;
-          color: $text-color;
+          color: $text-color-primary;
         }
       }
-      
+
       .section-image {
         position: relative;
         overflow: hidden;
         margin-right: 2rem;
         border-radius: 8px;
-        
+
         img {
           transition: transform 0.5s ease;
-          
+
           &:hover {
             transform: scale(1.03);
           }
@@ -99,136 +105,156 @@
       }
     }
   }
-  
+
   // Staff Section Styles
   .staff-highlights {
     .highlight-card {
-        background: linear-gradient(145deg, #ffffff, $alt-background);
+      background: linear-gradient(145deg, #ffffff, $background-color-secondary);
       border-radius: 10px;
       padding: 1.5rem;
       transition: all 0.3s ease;
       height: 100%;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      
+
       &:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       }
-      
+
       .highlight-icon {
         font-size: 2.5rem;
-        color: $dark-purple-1;
+        color: $icon-color-primary;
         margin-bottom: 1rem;
       }
-      
+
       h4 {
         font-weight: 600;
         margin-bottom: 0.5rem;
       }
-      
+
       p {
-        color: rgb(153, 153, 153);
+        color: $text-color-secondary;
         margin-bottom: 0;
       }
     }
   }
-  
+
   // Teaching Methods Styles
   .teaching-methods {
     .method-card {
-      background: linear-gradient(145deg, #ffffff, $alt-background);
+      background: linear-gradient(
+        145deg,
+        $background-color-primary,
+        $background-color-secondary
+      );
       border-radius: 10px;
       padding: 1.5rem;
       height: 100%;
       transition: all 0.3s ease;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      
+
       &:hover {
         transform: translateY(-5px);
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       }
-      
+
       .method-icon {
         width: 60px;
         height: 60px;
         display: flex;
         align-items: center;
         justify-content: center;
-        background: linear-gradient(to right, $dark-purple-1, color.adjust($dark-purple-1, $lightness: 0%));
-        color: #FFFFFF;
+        background: linear-gradient(
+          to right,
+          $icon-color-primary,
+          color.adjust($icon-color-primary, $lightness: 0%)
+        );
+        color: $text-color-light;
         font-size: 1.5rem;
         border-radius: 50%;
         margin-bottom: 1rem;
       }
-      
+
       h5 {
         font-weight: 600;
         margin-bottom: 0.5rem;
       }
-      
+
       p {
-        color: gray;
+        color: $text-color-secondary;
         margin-bottom: 0;
       }
     }
   }
-  
+
   // Test Features Styles
   .test-features {
     .test-process {
-      background: linear-gradient(145deg, #ffffff, $alt-background);
+      background: linear-gradient(
+        145deg,
+        $background-color-primary,
+        $background-color-secondary
+      );
       border-radius: 10px;
       padding: 1.5rem;
       height: 100%;
-      
+
       h4 {
         font-weight: 600;
         margin-bottom: 1.5rem;
-        color: gray;
+        color: $text-color-secondary;
       }
-      
+
       .process-list {
         list-style: none;
         padding: 0;
         margin: 0;
-        
+
         li {
           display: flex;
           align-items: center;
           margin-bottom: 1rem;
           padding: 0.75rem;
-          background-color: $background;
+          background-color: $background-color-primary;
           border-radius: 8px;
           box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
           transition: all 0.3s ease;
-          
+
           &:hover {
             transform: translateX(5px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
           }
-          
+
           .process-number {
             display: flex;
             align-items: center;
             justify-content: center;
             width: 30px;
             height: 30px;
-            background: linear-gradient(to right, $dark-purple-1, color.adjust($dark-purple-1, $lightness: 0%));
+            background: linear-gradient(
+              to right,
+              $btn-color-primary-hover,
+              color.adjust($btn-color-primary-hover, $lightness: 0%)
+            );
             color: white;
             border-radius: 50%;
             font-weight: bold;
             margin-right: 1rem;
           }
-          
+
           .process-text {
             font-weight: 500;
           }
         }
       }
     }
-    
+
     .test-cta {
-      background: linear-gradient(145deg, #ffffff, $alt-background);
+      background: linear-gradient(
+        145deg,
+        $background-color-primary,
+        $background-color-secondary
+      );
       border-radius: 10px;
       padding: 2rem;
       height: 100%;
@@ -237,41 +263,45 @@
       align-items: center;
       justify-content: center;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      
+
       h4 {
         font-weight: 600;
         margin-bottom: 0.5rem;
       }
-      
+
       p {
-        color: gray;
+        color: $text-color-secondary;
         margin-bottom: 1rem;
       }
-      
+
       .btn-primary {
-        background: linear-gradient(to right, $dark-purple-1, color.adjust($dark-purple-1, $lightness: 10%));
+        background: linear-gradient(
+          to right,
+          $btn-color-primary,
+          color.adjust($btn-color-primary, $lightness: 10%)
+        );
         border: none;
         padding: 0.75rem 1.5rem;
         border-radius: 50px;
         font-weight: 600;
-        box-shadow: 0 5px 15px rgba($dark-purple-1, 0.3);
+        box-shadow: 0 5px 15px rgba($btn-color-primary, 0.3);
         transition: all 0.3s ease;
-        
+
         &:hover {
           transform: translateY(-3px);
-          box-shadow: 0 8px 20px rgba($dark-purple-1, 0.4);
+          box-shadow: 0 8px 20px rgba($btn-color-primary-hover, 0.4);
         }
       }
     }
   }
-  
+
   // Responsive adjustments
   @media (max-width: 991px) {
     .section-image {
       margin-bottom: 2rem;
       margin-right: 0 !important;
     }
-    
+
     .tab-pane .section-content {
       padding: 1.5rem;
     }

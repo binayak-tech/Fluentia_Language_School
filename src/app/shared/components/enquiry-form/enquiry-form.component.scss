@@ -1,74 +1,100 @@
-// src/app/components/enquiry-form/enquiry-form.component.scss
+@use "../../../../styles/variables" as *;
 .enquiry-form-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1050;
-    animation: fadeIn 0.3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $shadow-color-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+  animation: fadeIn 0.3s ease;
+}
+
+.enquiry-form-container {
+  width: 100%;
+  max-width: 500px;
+  background-color: $background-color-secondary;
+  border-radius: 8px;
+  box-shadow: 0 5px 30px $shadow-color-secondary;
+  animation: slideIn 0.4s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.enquiry-form-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h3 {
+    margin: 0;
+    color: $text-color-heading-primary;
+    font-weight: 600;
   }
-  
-  .enquiry-form-container {
-    width: 100%;
-    max-width: 500px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
-    animation: slideIn 0.4s ease;
-    max-height: 90vh;
-    overflow-y: auto;
-  }
-  
-  .enquiry-form-header {
-    padding: 1.5rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    h3 {
-      margin: 0;
-      color: var(--primary-color);
-      font-weight: 600;
+}
+
+.enquiry-form-body {
+  padding: 1.5rem;
+
+  input,
+  textarea,
+  select {
+    // width: 100%;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: $text-color-primary;
+
+    &:focus {
+      border-color: $btn-color-primary;
+      box-shadow: 0 0 0 0.2rem rgba($btn-color-primary, 0.25);
+      outline: none;
     }
   }
-  
-  .enquiry-form-body {
-    padding: 1.5rem;
-    
-    .lead {
-      margin-bottom: 1.5rem;
-      font-size: 1rem;
-      color: #6c757d;
-    }
+  .lead {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: $text-color-secondary;
   }
-  
-  .success-message {
-    padding: 2rem 1rem;
-    
-    .success-icon {
-      font-size: 4rem;
-      color: #28a745;
-      margin-bottom: 1rem;
-    }
-    
-    h4 {
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
+}
+
+.success-message {
+  padding: 2rem 1rem;
+
+  .success-icon {
+    font-size: 4rem;
+    color: $text-color-success;
+    margin-bottom: 1rem;
   }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+
+  h4 {
+    font-weight: 600;
+    margin-bottom: 1rem;
   }
-  
-  @keyframes slideIn {
-    from { transform: translateY(50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

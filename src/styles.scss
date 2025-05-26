@@ -1,18 +1,13 @@
 @use "styles/variables" as *;
-@use "bootstrap/scss/bootstrap";
-
-// CSS Variables (optional, for runtime usage in JS or inline styles)
-:root {
-  --primary-color: #{$primary-color};
-  --primary-dark-color: #{$primary-dark-color};
-  --secondary-color: #{$secondary-color};
-  --light-color: #{$light-color};
-  --dark-color: #{$dark-color};
-}
+@use "bootstrap/scss/bootstrap" with (
+  $primary: $btn-color-primary
+);
+@use "@fontsource/poppins" as *;
 
 body {
-  font-family: $font-family-base;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background: $background-color-secondary;
 }

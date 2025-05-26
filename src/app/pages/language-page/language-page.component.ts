@@ -2,10 +2,10 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, ActivatedRoute, Router } from '@angular/router';
 import { trigger, transition, style, animate } from '@angular/animations';
-import { Language } from '../../../models/Language.model';
+import { Language } from '../../models/Language.model';
 import { Subscription } from 'rxjs';
-import { LanguageService } from '../../../services/language-service';
-import { CtaComponent } from '../../../shared/components/cta/cta.component';
+import { LanguageService } from '../../services/language-service';
+import { CtaComponent } from '../../shared/components/cta/cta.component';
 import { Title, Meta } from '@angular/platform-browser';
 
 @Component({

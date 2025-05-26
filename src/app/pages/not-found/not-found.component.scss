@@ -1,51 +1,93 @@
-.not-found-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #b57edc, #8b5fbf);
-    color: #fff;
-    text-align: center;
-    padding: 2rem;
-  
-    .container {
-      max-width: 600px;
-      background: rgba(255, 255, 255, 0.1);
-      padding: 3rem;
-      border-radius: 1rem;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  
-      .error-code {
-        font-size: 6rem;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-      }
-  
-      .error-message {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-      }
-  
-      .error-description {
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
-        opacity: 0.9;
-      }
-  
-      .home-button {
-        display: inline-block;
-        background-color: #ffffff;
-        color: #8b5fbf;
-        padding: 0.75rem 1.5rem;
-        border-radius: 30px;
-        font-weight: 600;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-  
-        &:hover {
-          background-color: #f0f0f0;
-        }
-      }
+@use "../../../styles/variables" as *;
+
+.not-found-container {
+  background-color: $background-color-secondary;
+  color: $text-color-primary;
+  padding: 20px;
+  box-sizing: border-box;
+
+  .container {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: $background-color-primary;
+    padding: 40px;
+  }
+  .text-heading-primary {
+    color: $text-color-heading-primary;
+    font-weight: 700;
+  }
+
+  .text-color-dark {
+    color: $text-color-dark;
+  }
+
+  .text-color-secondary {
+    color: $text-color-secondary;
+  }
+
+  .btn-primary {
+    background-color: $btn-color-primary;
+    border-color: $btn-color-primary;
+    color: $text-color-light;
+    padding: 12px 30px;
+    border-radius: 50px; // Pill shape for buttons
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+
+    &:hover {
+      background-color: $btn-color-primary-hover;
+      border-color: $btn-color-primary-hover;
+    }
+
+    .fas {
+      color: $text-color-light;
     }
   }
-  
+
+  .link-color {
+    color: $link-color;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $link-hover-color;
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: $link-active-color;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .not-found-container {
+    h1.display-1 {
+      font-size: 6rem; // Adjust for smaller screens
+    }
+    h2 {
+      font-size: 1.8rem;
+    }
+    .lead {
+      font-size: 1rem;
+    }
+    .btn-lg {
+      padding: 10px 25px;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .not-found-container {
+    h1.display-1 {
+      font-size: 4rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
+    .lead {
+      font-size: 0.9rem;
+    }
+  }
+}

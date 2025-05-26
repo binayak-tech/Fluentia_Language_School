@@ -6,16 +6,16 @@ export const Languages: Language[] = [
     slug: 'french',
     name: 'French',
     title:
-      'Master French with Fluentia Language School – Unlock a World of Opportunities!',
+      'Master French with Fluentia – Your Gateway to a World of Opportunities',
     description:
-      "In today's globalized world, learning French is more than just acquiring a language—it's embracing a culture, expanding career horizons, and stepping into a world of new possibilities. Spoken by over 300 million people across five continents, French is not only the language of love but also of diplomacy, business, and international relations.",
+      "French is not just a language; it's a key to understanding a rich culture, history, and global influence. With over 300 million speakers worldwide, French is the official language of many international organizations and a vital language in diplomacy, business, and culture.",
     benefitTitle: 'Why Learn French?',
     benefits: [
       {
         icon: 'fa-globe-europe',
         title: 'Global Recognition',
         description:
-          'French is an official language in 29 countries and spoken across five continents.',
+          'is an official language in 29 countries and spoken across five continents.',
       },
       {
         icon: 'fa-briefcase',
@@ -49,12 +49,12 @@ export const Languages: Language[] = [
     ],
     testimonials: [
       {
-        name: 'Sophie L.',
+        name: 'Priya Sharma',
         text: 'After six months at Fluentia, I passed my DELF B2 with distinction. The teachers make French come alive!',
         avatar: '/assets/images/testimonials/girl.jpg',
       },
       {
-        name: 'Marco T.',
+        name: 'Rahul Tripathi',
         text: 'The cultural insights provided alongside language training made my relocation to Paris so much smoother.',
         avatar: '/assets/images/testimonials/boy.jpg',
       },
@@ -113,12 +113,12 @@ export const Languages: Language[] = [
     ],
     testimonials: [
       {
-        name: 'James H.',
+        name: 'Amit Hegde',
         text: 'The conversational focus at Fluentia helped me become fluent enough to secure a job in Madrid within a year!',
         avatar: '/assets/images/testimonials/boy.jpg',
       },
       {
-        name: 'Lucia M.',
+        name: 'Neha Mehta',
         text: 'The teachers make learning Spanish fun and practical. I can now watch Spanish shows without subtitles!',
         avatar: '/assets/images/testimonials/girl.jpg',
       },
@@ -178,12 +178,12 @@ export const Languages: Language[] = [
     ],
     testimonials: [
       {
-        name: 'Thomas K.',
+        name: 'Siddharth Kulkarni',
         text: "Fluentia's systematic approach to German grammar made a seemingly difficult language accessible and logical!",
         avatar: '/assets/images/testimonials/boy.jpg',
       },
       {
-        name: 'Anna W.',
+        name: 'Anjali Wadhwa',
         text: 'I secured an internship in Berlin after just one year of German studies at Fluentia. Their business German module was invaluable.',
         avatar: '/assets/images/testimonials/girl.jpg',
       },
@@ -241,12 +241,12 @@ export const Languages: Language[] = [
     ],
     testimonials: [
       {
-        name: 'David L.',
+        name: 'Vikram Lal',
         text: 'The character learning system at Fluentia makes what seemed impossible actually enjoyable. I can now read signs and menus in China!',
         avatar: '/assets/images/testimonials/boy.jpg',
       },
       {
-        name: 'Lin W.',
+        name: 'Meera Warrier',
         text: 'As someone who wanted to connect with my heritage, Fluentia helped me gain confidence in speaking with my extended family.',
         avatar: '/assets/images/testimonials/girl.jpg',
       },
@@ -303,12 +303,12 @@ export const Languages: Language[] = [
     ],
     testimonials: [
       {
-        name: 'Sarah M.',
+        name: 'Sneha Menon',
         text: "Fluentia's teachers made learning Hangul so much easier than I expected. Now I can finally understand my favorite K-Pop lyrics!",
         avatar: '/assets/images/testimonials/girl.jpg',
       },
       {
-        name: 'Kenji S.',
+        name: 'Arjun Singh',
         text: 'Learning Korean at Fluentia has been fantastic for my career prospects in South Korea. The business Korean modules were particularly helpful.',
         avatar: '/assets/images/testimonials/boy.jpg',
       },
@@ -363,12 +363,12 @@ export const Languages: Language[] = [
     exams: ['JLPT (Japanese Language Proficiency Test)'],
     testimonials: [
       {
-        name: 'Emily R.',
+        name: 'Pooja Reddy',
         text: "Fluentia's step-by-step approach to Kanji made it less intimidating. I'm now able to read basic Japanese texts!",
         avatar: '/assets/images/testimonials/girl.jpg',
       },
       {
-        name: 'Rajiv P.',
+        name: 'Rohan Patil',
         text: 'Learning Japanese at Fluentia has significantly improved my interactions with my colleagues in our Tokyo office. The cultural insights were invaluable.',
         avatar: '/assets/images/testimonials/boy.jpg',
       },
@@ -427,12 +427,12 @@ export const Languages: Language[] = [
     ],
     testimonials: [
       {
-        name: 'Omar Z.',
+        name: 'Imran Zaidi',
         text: "Fluentia's instructors are excellent at explaining the intricacies of Arabic grammar. I'm now much more confident in my reading and writing.",
         avatar: '/assets/images/testimonials/boy.jpg',
       },
       {
-        name: 'Jessica B.',
+        name: 'Shreya Bhattacharya',
         text: 'Learning Arabic at Fluentia has enriched my understanding of Middle Eastern culture and improved my ability to connect with colleagues from the region.',
         avatar: '/assets/images/testimonials/girl.jpg',
       },

@@ -2,13 +2,13 @@
 
 .cta-section {
   padding: 5rem 0;
-  background-color: $alt-background;
+  background-color: $background-color-secondary;
 
   .cta-card {
-    background-color: white;
-    border-radius: 15px;
+    background-color: $background-color-primary;
+    border-radius: 12px;
     padding: 3rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 30px $shadow-color-secondary;
     position: relative;
     overflow: hidden;
 
@@ -21,8 +21,8 @@
       height: 5px;
       background: linear-gradient(
         90deg,
-        var(--primary-color) 0%,
-        var(--accent-color) 100%
+        $btn-color-primary 0%,
+        $btn-color-primary-hover 100%
       );
     }
 
@@ -34,7 +34,7 @@
   .cta-title {
     font-size: 2.2rem;
     font-weight: 700;
-    color: var(--primary-color);
+    color: $text-color-heading-primary;
     margin-bottom: 1rem;
 
     @media (max-width: 768px) {
@@ -44,7 +44,7 @@
 
   .cta-text {
     font-size: 1.1rem;
-    color: #555;
+    color: $text-color-secondary;
     margin-bottom: 1.5rem;
   }
 
@@ -58,12 +58,12 @@
 
     li {
       font-size: 1rem;
-      color: #555;
+      color: $text-color-secondary;
       display: flex;
       align-items: center;
 
       i {
-        color: var(--primary-color);
+        color: $icon-color-primary;
         margin-right: 0.5rem;
       }
     }
@@ -74,26 +74,26 @@
     font-size: 1.1rem;
     font-weight: 600;
     border-radius: 30px;
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    box-shadow: 0 5px 15px rgba(93, 58, 155, 0.3);
+    background-color: $btn-color-primary;
+    border-color: $btn-color-primary;
+    box-shadow: 0 5px 15px rgba($btn-color-primary, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: white;
+    color: $text-color-light;
 
     &:hover {
       transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(93, 58, 155, 0.4);
-      background-color: var(--primary-dark-color);
-      border-color: var(--primary-dark-color);
+      box-shadow: 0 8px 20px rgba($btn-color-primary, 0.4);
+      background-color: $btn-color-primary-hover;
+      border-color: $btn-color-primary-hover;
     }
   }
 
   .cta-subtext {
     font-size: 0.9rem;
-    color: #777;
+    color: $text-color-secondary;
 
     a {
-      color: var(--primary-color);
+      color: $btn-color-primary;
       text-decoration: none;
       font-weight: 600;
 
